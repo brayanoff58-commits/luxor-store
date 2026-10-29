@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,61 +9,61 @@
 
 <style>
 :root {
-  --bg: #050b16;
-  --panel: #0c1930;
-  --blue: #1687ff;
-  --cyan: #38d9ff;
-  --line: #213956;
-  --text: #eef7ff;
-  --muted: #91aac9;
+  --bg:#050b16;
+  --panel:#0c1930;
+  --blue:#1687ff;
+  --cyan:#38d9ff;
+  --line:#213956;
+  --text:#eef7ff;
+  --muted:#91aac9;
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing:border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior:smooth;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
 }
 
 header {
-  background: #081426;
-  border-bottom: 1px solid var(--line);
-  padding: 18px 5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  flex-wrap: wrap;
+  background:#081426;
+  border-bottom:1px solid var(--line);
+  padding:18px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
 }
 
 .logo {
-  font-size: 25px;
-  font-weight: 900;
+  font-size:25px;
+  font-weight:900;
 }
 
 .logo span {
-  color: var(--cyan);
+  color:var(--cyan);
 }
 
 nav a {
-  color: #c5dcf7;
-  text-decoration: none;
-  margin-left: 18px;
-  font-size: 14px;
+  color:#c5dcf7;
+  text-decoration:none;
+  margin-left:18px;
+  font-size:14px;
 }
 
 .hero {
-  padding: 75px 20px;
-  text-align: center;
-  background: radial-gradient(
+  padding:75px 20px;
+  text-align:center;
+  background:radial-gradient(
     ellipse at top,
     #123d76,
     #050b16 75%
@@ -70,225 +71,221 @@ nav a {
 }
 
 .tag {
-  display: inline-block;
-  background: #123b63;
-  color: #80deff;
-  border: 1px solid #2176b9;
-  border-radius: 30px;
-  padding: 10px 16px;
-  font-size: 13px;
+  display:inline-block;
+  background:#123b63;
+  color:#80deff;
+  border:1px solid #2176b9;
+  border-radius:30px;
+  padding:10px 16px;
+  font-size:13px;
 }
 
 h1 {
-  font-size: clamp(38px, 7vw, 70px);
-  margin: 23px 0 12px;
+  font-size:clamp(38px,7vw,70px);
+  margin:23px 0 12px;
 }
 
 h1 span {
-  color: var(--cyan);
+  color:var(--cyan);
 }
 
 .hero p {
-  color: #b9d1ee;
-  line-height: 1.7;
+  color:#b9d1ee;
+  line-height:1.7;
 }
 
 .btn {
-  display: inline-block;
-  padding: 15px 26px;
-  margin-top: 20px;
-  border: 0;
-  border-radius: 12px;
-  color: white;
-  font-size: 15px;
-  font-weight: bold;
-  background: linear-gradient(
+  display:inline-block;
+  padding:15px 26px;
+  margin-top:20px;
+  border:0;
+  border-radius:12px;
+  color:white;
+  font-size:15px;
+  font-weight:bold;
+  background:linear-gradient(
     135deg,
     #1263fa,
     #15b9ff
   );
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
+  cursor:pointer;
+  text-decoration:none;
+  text-align:center;
 }
 
 .btn:hover {
-  filter: brightness(1.12);
+  filter:brightness(1.12);
 }
 
 .btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+  opacity:.5;
+  cursor:not-allowed;
 }
 
 .container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 45px 20px;
+  max-width:1100px;
+  margin:auto;
+  padding:45px 20px;
 }
 
 h2 {
-  font-size: 27px;
+  font-size:27px;
 }
 
 .subtitle {
-  color: var(--muted);
-  line-height: 1.6;
+  color:var(--muted);
+  line-height:1.6;
 }
 
 .steps {
-  display: grid;
+  display:grid;
   grid-template-columns:
-    repeat(auto-fit, minmax(190px, 1fr));
-  gap: 14px;
-  margin: 25px 0 35px;
+    repeat(auto-fit,minmax(190px,1fr));
+  gap:14px;
+  margin:25px 0 35px;
 }
 
 .step,
 .card,
 .box {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 22px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:22px;
 }
 
 .step strong {
-  color: var(--cyan);
+  color:var(--cyan);
 }
 
 .step p {
-  color: var(--muted);
-  font-size: 14px;
+  color:var(--muted);
+  font-size:14px;
 }
 
 .grid {
-  display: grid;
+  display:grid;
   grid-template-columns:
-    repeat(auto-fit, minmax(225px, 1fr));
-  gap: 18px;
-  margin-top: 25px;
+    repeat(auto-fit,minmax(225px,1fr));
+  gap:18px;
+  margin-top:25px;
 }
 
 .card {
-  cursor: pointer;
-  text-align: center;
-  transition: 0.2s;
+  cursor:pointer;
+  text-align:center;
+  transition:.2s;
 }
 
 .card:hover {
-  border-color: var(--blue);
-  transform: translateY(-3px);
+  border-color:var(--blue);
+  transform:translateY(-3px);
 }
 
 .card:focus-visible {
-  outline: 2px solid var(--cyan);
+  outline:2px solid var(--cyan);
 }
 
 .card.selected {
-  border: 2px solid var(--cyan);
-  background: #102c4e;
-  box-shadow: 0 0 22px #147dff33;
+  border:2px solid var(--cyan);
+  background:#102c4e;
+  box-shadow:0 0 22px #147dff33;
 }
 
 .diamond {
-  font-size: 49px;
-  margin-bottom: 15px;
+  font-size:49px;
+  margin-bottom:15px;
 }
 
 .amount {
-  font-size: 27px;
-  font-weight: 900;
+  font-size:27px;
+  font-weight:900;
 }
 
 .card p {
-  color: var(--muted);
-  font-size: 13px;
+  color:var(--muted);
+  font-size:13px;
 }
 
 .price {
-  color: var(--cyan);
-  margin-top: 17px;
-  font-size: 23px;
-  font-weight: bold;
+  color:var(--cyan);
+  margin-top:17px;
+  font-size:23px;
+  font-weight:bold;
 }
 
 .small {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.6;
-  overflow-wrap: anywhere;
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.6;
+  overflow-wrap:anywhere;
 }
 
 .checkout {
-  margin-top: 38px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
+  margin-top:38px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
 }
 
 input {
-  display: block;
-  width: 100%;
-  padding: 16px;
-  border: 1px solid #365170;
-  border-radius: 10px;
-  background: #081326;
-  color: white;
-  font-size: 17px;
-  margin: 14px 0;
+  display:block;
+  width:100%;
+  padding:16px;
+  border:1px solid #365170;
+  border-radius:10px;
+  background:#081326;
+  color:white;
+  font-size:17px;
+  margin:14px 0;
 }
 
 input:focus {
-  outline: 2px solid var(--cyan);
+  outline:2px solid var(--cyan);
 }
 
 .summary {
-  background: #07152a;
-  border: 1px solid var(--line);
-  padding: 20px;
-  border-radius: 12px;
-  line-height: 2;
+  background:#07152a;
+  border:1px solid var(--line);
+  padding:20px;
+  border-radius:12px;
+  line-height:2;
 }
 
 .total {
-  color: var(--cyan);
-  font-size: 22px;
+  color:var(--cyan);
+  font-size:22px;
 }
 
 .notice {
-  background: #102137;
-  border-left: 3px solid var(--cyan);
-  padding: 15px;
-  margin-top: 20px;
-  color: #cbdcf1;
-  font-size: 14px;
-  line-height: 1.6;
+  background:#102137;
+  border-left:3px solid var(--cyan);
+  padding:15px;
+  margin-top:20px;
+  color:#cbdcf1;
+  font-size:14px;
+  line-height:1.6;
 }
 
 #mensaje {
-  margin-top: 16px;
-}
-
-#enlacePago a {
-  overflow-wrap: anywhere;
+  margin-top:16px;
 }
 
 footer {
-  border-top: 1px solid var(--line);
-  padding: 30px 20px;
-  text-align: center;
-  color: var(--muted);
-  line-height: 1.8;
+  border-top:1px solid var(--line);
+  padding:30px 20px;
+  text-align:center;
+  color:var(--muted);
+  line-height:1.8;
 }
 
-@media (max-width: 680px) {
+@media(max-width:680px) {
   .checkout {
-    grid-template-columns: 1fr;
+    grid-template-columns:1fr;
   }
 
   nav a {
-    margin: 0 12px 0 0;
+    margin:0 12px 0 0;
   }
 }
 </style>
@@ -331,33 +328,25 @@ footer {
   <h2>¿Cómo funciona?</h2>
 
   <div class="steps">
-
     <div class="step">
       <strong>01 • Tu ID</strong>
-      <p>
-        Introduce tu ID de Free Fire.
-      </p>
+      <p>Introduce tu ID de Free Fire.</p>
     </div>
 
     <div class="step">
       <strong>02 • Diamantes</strong>
-      <p>
-        Selecciona el paquete que deseas.
-      </p>
+      <p>Selecciona tu paquete favorito.</p>
     </div>
 
     <div class="step">
       <strong>03 • Pago</strong>
       <p>
-        El pago se habilitará después
-        de completar las pruebas.
+        Prueba la conexión con Mercado Pago.
       </p>
     </div>
-
   </div>
 
   <section id="paquetes">
-
     <h2>💎 Diamantes Free Fire</h2>
 
     <p class="subtitle">
@@ -366,13 +355,11 @@ footer {
     </p>
 
     <div class="grid" id="catalogo"></div>
-
   </section>
 
   <section class="checkout" id="pedido">
 
     <div class="box">
-
       <h2>🎮 Datos del jugador</h2>
 
       <p class="subtitle">
@@ -397,15 +384,12 @@ footer {
         🔒 Nunca necesitamos tu contraseña.
         Revisa cuidadosamente tu ID.
       </div>
-
     </div>
 
     <div class="box">
-
       <h2>🛒 Resumen del pedido</h2>
 
       <div class="summary">
-
         <div>
           Juego: <b>Free Fire</b>
         </div>
@@ -435,7 +419,6 @@ footer {
           Estado:
           <b id="estado">Sin pagar</b>
         </div>
-
       </div>
 
       <button
@@ -444,7 +427,7 @@ footer {
         type="button"
         disabled
       >
-        🔒 Comprar (prueba)
+        🧪 Comprar (prueba)
       </button>
 
       <p
@@ -458,11 +441,10 @@ footer {
       <div id="enlacePago"></div>
 
       <div class="notice">
-        ⚠️ Los cobros reales y las recargas
-        automáticas todavía no están habilitados.
-        No realices transferencias.
+        ⚠️ Estamos en modo de prueba.
+        No se aceptan cobros reales ni
+        se realizan recargas automáticas todavía.
       </div>
-
     </div>
 
   </section>
@@ -477,38 +459,39 @@ footer {
 
 <script>
 
-// ========================================
-// CONFIGURACION DE SUPABASE
-// ========================================
+// ======================================
+// SUPABASE - PROYECTO LUXOR STORE
+// ======================================
 
 const SUPABASE_URL =
   "https://bfdjeuynxlejzipcdmmf.supabase.co";
 
-// Solo se puede usar una clave publica anon.
-// Nunca coloques service_role ni claves secretas.
+// CLAVE PUBLICA ANON
+// Nunca colocar service_role aqui.
 
 const SUPABASE_ANON_KEY =
-  "PEGAR_AQUI_CLAVE_ANON_PUBLICA";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmZGpldXlueGxlanppcGNkbW1mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI5Nzk2ODgsImV4cCI6MjEwODU1NTY4OH0.OciMVU6NtHuzeKG8saIiQ48NDfYyP7_QpPAeTbcYhHw";
 
-// ========================================
-// PRECIOS DE LUXOR STORE
-// ========================================
+// ======================================
+// PAQUETES Y PRECIOS
+// ======================================
 
 const paquetes = [
-  { cantidad: 110, precio: 2.79 },
-  { cantidad: 341, precio: 8.00 },
-  { cantidad: 572, precio: 12.89 },
-  { cantidad: 1166, precio: 23.89 },
-  { cantidad: 2398, precio: 46.99 },
-  { cantidad: 6160, precio: 118.00 }
+  { cantidad:110, precio:2.79 },
+  { cantidad:341, precio:8.00 },
+  { cantidad:572, precio:12.89 },
+  { cantidad:1166, precio:23.89 },
+  { cantidad:2398, precio:46.99 },
+  { cantidad:6160, precio:118.00 }
 ];
 
-// ========================================
-// ELEMENTOS DE LA PAGINA
-// ========================================
+// ======================================
+// ELEMENTOS
+// ======================================
 
 let elegido = null;
 let enviando = false;
+let claveCompra = null;
 
 const catalogo =
   document.getElementById("catalogo");
@@ -537,9 +520,9 @@ const estado =
 const enlacePago =
   document.getElementById("enlacePago");
 
-// ========================================
+// ======================================
 // FUNCIONES
-// ========================================
+// ======================================
 
 function moneda(valor) {
   return "S/ " + valor.toFixed(2);
@@ -551,17 +534,12 @@ function idValido() {
   );
 }
 
-function configurado() {
-  return (
-    SUPABASE_ANON_KEY !==
-    "PEGAR_AQUI_CLAVE_ANON_PUBLICA"
-    &&
-    SUPABASE_ANON_KEY.length > 20
-  );
+function nuevaClave() {
+  return "luxor_" +
+    crypto.randomUUID().replaceAll("-", "");
 }
 
 function actualizar() {
-
   const id = jugador.value.trim();
 
   idResumen.textContent =
@@ -578,26 +556,20 @@ function actualizar() {
   comprar.disabled =
     enviando ||
     !elegido ||
-    !idValido() ||
-    !configurado();
-
-  if (!configurado()) {
-    mensaje.textContent =
-      "Conexión pendiente: falta configurar la clave pública de Supabase.";
-  } else if (!enviando && enlacePago.childElementCount === 0) {
-    mensaje.textContent =
-      elegido && idValido()
-        ? "Datos listos para una prueba de pago."
-        : "Elige un paquete e introduce un ID válido.";
-  }
+    !idValido();
 }
 
-// ========================================
-// MOSTRAR PAQUETES
-// ========================================
+function reiniciarPedido() {
+  claveCompra = null;
+  enlacePago.replaceChildren();
+  estado.textContent = "Sin pagar";
+}
+
+// ======================================
+// MOSTRAR LOS SEIS PAQUETES
+// ======================================
 
 paquetes.forEach((p) => {
-
   const card =
     document.createElement("div");
 
@@ -616,7 +588,6 @@ paquetes.forEach((p) => {
   `;
 
   function elegir() {
-
     if (enviando) return;
 
     elegido = p;
@@ -630,14 +601,15 @@ paquetes.forEach((p) => {
     card.classList.add("selected");
     card.setAttribute("aria-pressed", "true");
 
-    enlacePago.replaceChildren();
-    estado.textContent = "Sin pagar";
-
+    reiniciarPedido();
     actualizar();
+
+    mensaje.textContent =
+      "Ingresa tu ID y prepara una compra de prueba.";
 
     document.getElementById("pedido")
       .scrollIntoView({
-        behavior: "smooth"
+        behavior:"smooth"
       });
   }
 
@@ -654,84 +626,78 @@ paquetes.forEach((p) => {
   });
 
   catalogo.appendChild(card);
-
 });
 
-// ========================================
+// ======================================
 // VALIDAR ID
-// ========================================
+// ======================================
 
 jugador.addEventListener("input", () => {
+  if (enviando) return;
 
-  enlacePago.replaceChildren();
-
-  estado.textContent = "Sin pagar";
-
+  reiniciarPedido();
   actualizar();
-
 });
 
-// ========================================
-// CLAVE UNICA POR INTENTO
-// ========================================
-
-function nuevaClave() {
-  return "luxor_" +
-    crypto.randomUUID().replaceAll("-", "");
-}
-
-// ========================================
-// CONEXION A CREAR-PAGO
-// ========================================
+// ======================================
+// CREAR PAGO DE PRUEBA
+// ======================================
 
 comprar.addEventListener("click", async () => {
-
   if (
     enviando ||
     !elegido ||
-    !idValido() ||
-    !configurado()
-  ) {
-    return;
-  }
+    !idValido()
+  ) return;
 
   enviando = true;
-
   comprar.disabled = true;
 
   enlacePago.replaceChildren();
 
-  estado.textContent = "Preparando prueba";
+  estado.textContent =
+    "Preparando prueba";
 
   mensaje.textContent =
-    "Creando una preferencia de pago de prueba...";
+    "Conectando con Mercado Pago de prueba...";
+
+  if (!claveCompra) {
+    claveCompra = nuevaClave();
+  }
 
   try {
-
     const respuesta = await fetch(
       SUPABASE_URL + "/functions/v1/crear-pago",
       {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "apikey": SUPABASE_ANON_KEY,
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json",
+          "apikey":SUPABASE_ANON_KEY,
           "Authorization":
             "Bearer " + SUPABASE_ANON_KEY,
-          "x-idempotency-key": nuevaClave()
+          "x-idempotency-key":claveCompra
         },
-        body: JSON.stringify({
-          jugador_id: jugador.value.trim(),
-          paquete: String(elegido.cantidad)
+        body:JSON.stringify({
+          jugador_id:jugador.value.trim(),
+          paquete:String(elegido.cantidad)
         })
       }
     );
 
-    const datos = await respuesta.json();
+    let datos;
+
+    try {
+      datos = await respuesta.json();
+    } catch {
+      throw new Error(
+        "Respuesta inválida de Supabase."
+      );
+    }
 
     if (!respuesta.ok) {
       throw new Error(
         datos.error ||
-        "No se pudo crear el pedido de prueba."
+        "No se pudo crear el pago de prueba."
       );
     }
 
@@ -740,23 +706,25 @@ comprar.addEventListener("click", async () => {
       typeof datos.init_point !== "string"
     ) {
       throw new Error(
-        "La respuesta no contiene un enlace de prueba válido."
+        "No se recibió un enlace de prueba válido."
       );
     }
 
     const urlPago = new URL(datos.init_point);
 
+    const dominio = urlPago.hostname;
+
     if (
       urlPago.protocol !== "https:" ||
       !(
-        urlPago.hostname === "mercadopago.com" ||
-        urlPago.hostname.endsWith(".mercadopago.com") ||
-        urlPago.hostname === "mercadopago.com.pe" ||
-        urlPago.hostname.endsWith(".mercadopago.com.pe")
+        dominio === "mercadopago.com" ||
+        dominio.endsWith(".mercadopago.com") ||
+        dominio === "mercadopago.com.pe" ||
+        dominio.endsWith(".mercadopago.com.pe")
       )
     ) {
       throw new Error(
-        "El enlace de Mercado Pago no es válido."
+        "El enlace recibido no es válido."
       );
     }
 
@@ -766,7 +734,8 @@ comprar.addEventListener("click", async () => {
     mensaje.textContent =
       "Pedido de prueba #" +
       datos.pedido_id +
-      ". No se ha confirmado ningún pago.";
+      " generado correctamente. " +
+      "Todavía no está pagado.";
 
     const enlace =
       document.createElement("a");
@@ -782,8 +751,8 @@ comprar.addEventListener("click", async () => {
     enlacePago.appendChild(enlace);
 
   } catch (error) {
-
-    estado.textContent = "Sin pagar";
+    estado.textContent =
+      "Sin pagar";
 
     mensaje.textContent =
       error instanceof Error
@@ -791,18 +760,14 @@ comprar.addEventListener("click", async () => {
         : "Error desconocido";
 
   } finally {
-
     enviando = false;
-
     actualizar();
-
   }
-
 });
 
-// ========================================
-// INICIAR TIENDA
-// ========================================
+// ======================================
+// INICIAR
+// ======================================
 
 actualizar();
 
