@@ -8,275 +8,287 @@
 
 <style>
 :root {
-  --bg:#050b16;
-  --panel:#0c1930;
-  --blue:#1687ff;
-  --cyan:#38d9ff;
-  --line:#213956;
-  --text:#eef7ff;
-  --muted:#91aac9;
+  --bg: #050b16;
+  --panel: #0c1930;
+  --blue: #1687ff;
+  --cyan: #38d9ff;
+  --line: #213956;
+  --text: #eef7ff;
+  --muted: #91aac9;
 }
 
 * {
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 
 html {
-  scroll-behavior:smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
 header {
-  background:#081426;
-  border-bottom:1px solid var(--line);
-  padding:18px 5%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  flex-wrap:wrap;
+  background: #081426;
+  border-bottom: 1px solid var(--line);
+  padding: 18px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .logo {
-  font-size:25px;
-  font-weight:900;
-  color:white;
+  font-size: 25px;
+  font-weight: 900;
 }
 
 .logo span {
-  color:var(--cyan);
+  color: var(--cyan);
 }
 
 nav a {
-  color:#c5dcf7;
-  text-decoration:none;
-  margin-left:18px;
-  font-size:14px;
+  color: #c5dcf7;
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 14px;
 }
 
 .hero {
-  padding:75px 20px;
-  text-align:center;
-  background:
-    radial-gradient(
-      ellipse at top,
-      #123d76,
-      #050b16 75%
-    );
+  padding: 75px 20px;
+  text-align: center;
+  background: radial-gradient(
+    ellipse at top,
+    #123d76,
+    #050b16 75%
+  );
 }
 
 .tag {
-  display:inline-block;
-  background:#123b63;
-  color:#80deff;
-  border:1px solid #2176b9;
-  border-radius:30px;
-  padding:10px 16px;
-  font-size:13px;
+  display: inline-block;
+  background: #123b63;
+  color: #80deff;
+  border: 1px solid #2176b9;
+  border-radius: 30px;
+  padding: 10px 16px;
+  font-size: 13px;
 }
 
 h1 {
-  font-size:clamp(38px,7vw,70px);
-  margin:23px 0 12px;
+  font-size: clamp(38px, 7vw, 70px);
+  margin: 23px 0 12px;
 }
 
 h1 span {
-  color:var(--cyan);
+  color: var(--cyan);
 }
 
 .hero p {
-  color:#b9d1ee;
-  line-height:1.7;
+  color: #b9d1ee;
+  line-height: 1.7;
 }
 
 .btn {
-  display:inline-block;
-  padding:15px 26px;
-  margin-top:20px;
-  border:0;
-  border-radius:12px;
-  color:white;
-  font-weight:bold;
-  font-size:15px;
-  background:linear-gradient(
+  display: inline-block;
+  padding: 15px 26px;
+  margin-top: 20px;
+  border: 0;
+  border-radius: 12px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  background: linear-gradient(
     135deg,
     #1263fa,
     #15b9ff
   );
-  cursor:pointer;
-  text-decoration:none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
 }
 
 .btn:hover {
-  filter:brightness(1.12);
+  filter: brightness(1.12);
 }
 
 .btn:disabled {
-  opacity:.5;
-  cursor:not-allowed;
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .container {
-  max-width:1100px;
-  margin:auto;
-  padding:45px 20px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 45px 20px;
 }
 
 h2 {
-  font-size:27px;
+  font-size: 27px;
 }
 
 .subtitle {
-  color:var(--muted);
-  line-height:1.6;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .steps {
-  display:grid;
+  display: grid;
   grid-template-columns:
-    repeat(auto-fit,minmax(190px,1fr));
-  gap:14px;
-  margin:25px 0 35px;
+    repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+  margin: 25px 0 35px;
 }
 
 .step,
 .card,
 .box {
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:22px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px;
 }
 
 .step strong {
-  color:var(--cyan);
+  color: var(--cyan);
 }
 
 .step p {
-  color:var(--muted);
-  font-size:14px;
+  color: var(--muted);
+  font-size: 14px;
 }
 
 .grid {
-  display:grid;
+  display: grid;
   grid-template-columns:
-    repeat(auto-fit,minmax(225px,1fr));
-  gap:18px;
-  margin-top:25px;
+    repeat(auto-fit, minmax(225px, 1fr));
+  gap: 18px;
+  margin-top: 25px;
 }
 
 .card {
-  cursor:pointer;
-  text-align:center;
-  transition:.2s;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.2s;
 }
 
 .card:hover {
-  border-color:var(--blue);
-  transform:translateY(-3px);
+  border-color: var(--blue);
+  transform: translateY(-3px);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--cyan);
 }
 
 .card.selected {
-  border:2px solid var(--cyan);
-  background:#102c4e;
-  box-shadow:0 0 22px #147dff33;
+  border: 2px solid var(--cyan);
+  background: #102c4e;
+  box-shadow: 0 0 22px #147dff33;
 }
 
 .diamond {
-  font-size:49px;
-  margin-bottom:15px;
+  font-size: 49px;
+  margin-bottom: 15px;
 }
 
 .amount {
-  font-size:27px;
-  font-weight:900;
+  font-size: 27px;
+  font-weight: 900;
 }
 
 .card p {
-  color:var(--muted);
-  font-size:13px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .price {
-  color:var(--cyan);
-  margin-top:17px;
-  font-size:23px;
-  font-weight:bold;
+  color: var(--cyan);
+  margin-top: 17px;
+  font-size: 23px;
+  font-weight: bold;
 }
 
 .small {
-  font-size:12px;
-  color:var(--muted);
-  line-height:1.6;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 
 .checkout {
-  margin-top:38px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:22px;
+  margin-top: 38px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
 }
 
 input {
-  display:block;
-  width:100%;
-  padding:16px;
-  border:1px solid #365170;
-  border-radius:10px;
-  background:#081326;
-  color:white;
-  font-size:17px;
-  margin:14px 0;
+  display: block;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #365170;
+  border-radius: 10px;
+  background: #081326;
+  color: white;
+  font-size: 17px;
+  margin: 14px 0;
 }
 
 input:focus {
-  outline:2px solid var(--cyan);
+  outline: 2px solid var(--cyan);
 }
 
 .summary {
-  background:#07152a;
-  border:1px solid var(--line);
-  padding:20px;
-  border-radius:12px;
-  line-height:2;
+  background: #07152a;
+  border: 1px solid var(--line);
+  padding: 20px;
+  border-radius: 12px;
+  line-height: 2;
 }
 
 .total {
-  color:var(--cyan);
-  font-size:22px;
+  color: var(--cyan);
+  font-size: 22px;
 }
 
 .notice {
-  background:#102137;
-  border-left:3px solid var(--cyan);
-  padding:15px;
-  margin-top:20px;
-  color:#cbdcf1;
-  font-size:14px;
-  line-height:1.6;
+  background: #102137;
+  border-left: 3px solid var(--cyan);
+  padding: 15px;
+  margin-top: 20px;
+  color: #cbdcf1;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+#mensaje {
+  margin-top: 16px;
+}
+
+#enlacePago a {
+  overflow-wrap: anywhere;
 }
 
 footer {
-  border-top:1px solid var(--line);
-  padding:30px 20px;
-  text-align:center;
-  color:var(--muted);
-  line-height:1.8;
+  border-top: 1px solid var(--line);
+  padding: 30px 20px;
+  text-align: center;
+  color: var(--muted);
+  line-height: 1.8;
 }
 
-@media(max-width:680px) {
+@media (max-width: 680px) {
   .checkout {
-    grid-template-columns:1fr;
+    grid-template-columns: 1fr;
   }
 
   nav a {
-    margin:0 12px 0 0;
+    margin: 0 12px 0 0;
   }
 }
 </style>
@@ -306,7 +318,7 @@ footer {
 
   <p>
     Tu espacio de recargas de Free Fire.<br>
-    Selecciona tus diamantes y prepara tu pedido.
+    Selecciona tus diamantes y prepara tu compra.
   </p>
 
   <a href="#paquetes" class="btn">
@@ -323,21 +335,22 @@ footer {
     <div class="step">
       <strong>01 • Tu ID</strong>
       <p>
-        Introduce el ID de tu cuenta de Free Fire.
+        Introduce tu ID de Free Fire.
       </p>
     </div>
 
     <div class="step">
       <strong>02 • Diamantes</strong>
       <p>
-        Selecciona el paquete que deseas comprar.
+        Selecciona el paquete que deseas.
       </p>
     </div>
 
     <div class="step">
-      <strong>03 • Pedido</strong>
+      <strong>03 • Pago</strong>
       <p>
-        Revisa los datos antes de continuar.
+        El pago se habilitará después
+        de completar las pruebas.
       </p>
     </div>
 
@@ -363,8 +376,8 @@ footer {
       <h2>🎮 Datos del jugador</h2>
 
       <p class="subtitle">
-        Escribe tu ID exactamente como aparece
-        en Free Fire.
+        Escribe tu ID exactamente
+        como aparece en Free Fire.
       </p>
 
       <label for="jugador">
@@ -382,8 +395,7 @@ footer {
 
       <div class="notice">
         🔒 Nunca necesitamos tu contraseña.
-        Revisa cuidadosamente tu ID antes
-        de confirmar.
+        Revisa cuidadosamente tu ID.
       </div>
 
     </div>
@@ -420,28 +432,35 @@ footer {
         </div>
 
         <div>
-          Estado: <b>Sin pagar</b>
+          Estado:
+          <b id="estado">Sin pagar</b>
         </div>
 
       </div>
 
       <button
         class="btn"
-        id="preparar"
+        id="comprar"
+        type="button"
         disabled
       >
-        Preparar pedido
+        🔒 Comprar (prueba)
       </button>
 
-      <p class="small" id="mensaje">
+      <p
+        class="small"
+        id="mensaje"
+        aria-live="polite"
+      >
         Elige un paquete e introduce tu ID.
       </p>
 
+      <div id="enlacePago"></div>
+
       <div class="notice">
-        ⚠️ Los pagos y las recargas automáticas
-        aún no están habilitados.
-        No realices transferencias hasta que
-        la tienda muestre un cobro oficial.
+        ⚠️ Los cobros reales y las recargas
+        automáticas todavía no están habilitados.
+        No realices transferencias.
       </div>
 
     </div>
@@ -452,23 +471,44 @@ footer {
 
 <footer>
   💎 LUXOR STORE<br>
-  Recargas de Free Fire • LATAM<br>
+  Recargas Free Fire • LATAM<br>
   © 2026 LUXOR STORE
 </footer>
 
 <script>
 
-// PRECIOS DE VENTA EN SOLES PERUANOS
+// ========================================
+// CONFIGURACION DE SUPABASE
+// ========================================
+
+const SUPABASE_URL =
+  "https://bfdjeuynxlejzipcdmmf.supabase.co";
+
+// Solo se puede usar una clave publica anon.
+// Nunca coloques service_role ni claves secretas.
+
+const SUPABASE_ANON_KEY =
+  "PEGAR_AQUI_CLAVE_ANON_PUBLICA";
+
+// ========================================
+// PRECIOS DE LUXOR STORE
+// ========================================
+
 const paquetes = [
-  { cantidad:110, precio:2.79 },
-  { cantidad:341, precio:8.00 },
-  { cantidad:572, precio:12.89 },
-  { cantidad:1166, precio:23.89 },
-  { cantidad:2398, precio:46.99 },
-  { cantidad:6160, precio:118.00 }
+  { cantidad: 110, precio: 2.79 },
+  { cantidad: 341, precio: 8.00 },
+  { cantidad: 572, precio: 12.89 },
+  { cantidad: 1166, precio: 23.89 },
+  { cantidad: 2398, precio: 46.99 },
+  { cantidad: 6160, precio: 118.00 }
 ];
 
+// ========================================
+// ELEMENTOS DE LA PAGINA
+// ========================================
+
 let elegido = null;
+let enviando = false;
 
 const catalogo =
   document.getElementById("catalogo");
@@ -485,17 +525,43 @@ const idResumen =
 const precioResumen =
   document.getElementById("precioResumen");
 
-const preparar =
-  document.getElementById("preparar");
+const comprar =
+  document.getElementById("comprar");
 
 const mensaje =
   document.getElementById("mensaje");
+
+const estado =
+  document.getElementById("estado");
+
+const enlacePago =
+  document.getElementById("enlacePago");
+
+// ========================================
+// FUNCIONES
+// ========================================
 
 function moneda(valor) {
   return "S/ " + valor.toFixed(2);
 }
 
+function idValido() {
+  return /^[0-9]{5,20}$/.test(
+    jugador.value.trim()
+  );
+}
+
+function configurado() {
+  return (
+    SUPABASE_ANON_KEY !==
+    "PEGAR_AQUI_CLAVE_ANON_PUBLICA"
+    &&
+    SUPABASE_ANON_KEY.length > 20
+  );
+}
+
 function actualizar() {
+
   const id = jugador.value.trim();
 
   idResumen.textContent =
@@ -509,11 +575,27 @@ function actualizar() {
     ? moneda(elegido.precio)
     : "S/ 0.00";
 
-  preparar.disabled =
-    !elegido || !/^[0-9]{5,20}$/.test(id);
+  comprar.disabled =
+    enviando ||
+    !elegido ||
+    !idValido() ||
+    !configurado();
+
+  if (!configurado()) {
+    mensaje.textContent =
+      "Conexión pendiente: falta configurar la clave pública de Supabase.";
+  } else if (!enviando && enlacePago.childElementCount === 0) {
+    mensaje.textContent =
+      elegido && idValido()
+        ? "Datos listos para una prueba de pago."
+        : "Elige un paquete e introduce un ID válido.";
+  }
 }
 
+// ========================================
 // MOSTRAR PAQUETES
+// ========================================
+
 paquetes.forEach((p) => {
 
   const card =
@@ -529,23 +611,27 @@ paquetes.forEach((p) => {
     <div class="diamond">💎</div>
     <div class="amount">${p.cantidad}</div>
     <p>Diamantes Free Fire • LATAM</p>
-    <div class="price">
-      ${moneda(p.precio)}
-    </div>
+    <div class="price">${moneda(p.precio)}</div>
     <p>Seleccionar paquete</p>
   `;
 
   function elegir() {
+
+    if (enviando) return;
+
     elegido = p;
 
     document.querySelectorAll(".card")
-      .forEach(c => {
+      .forEach((c) => {
         c.classList.remove("selected");
         c.setAttribute("aria-pressed", "false");
       });
 
     card.classList.add("selected");
     card.setAttribute("aria-pressed", "true");
+
+    enlacePago.replaceChildren();
+    estado.textContent = "Sin pagar";
 
     actualizar();
 
@@ -557,7 +643,7 @@ paquetes.forEach((p) => {
 
   card.addEventListener("click", elegir);
 
-  card.addEventListener("keydown", e => {
+  card.addEventListener("keydown", (e) => {
     if (
       e.key === "Enter" ||
       e.key === " "
@@ -568,38 +654,157 @@ paquetes.forEach((p) => {
   });
 
   catalogo.appendChild(card);
+
 });
 
+// ========================================
 // VALIDAR ID
-jugador.addEventListener("input", actualizar);
+// ========================================
 
-// PREPARAR RESUMEN SIN COBRAR
-preparar.addEventListener("click", async () => {
+jugador.addEventListener("input", () => {
+
+  enlacePago.replaceChildren();
+
+  estado.textContent = "Sin pagar";
 
   actualizar();
 
-  if (preparar.disabled) return;
+});
 
-  const resumen =
-    "LUXOR STORE\n" +
-    "Juego: Free Fire\n" +
-    "Region: LATAM\n" +
-    "ID: " + jugador.value.trim() + "\n" +
-    "Diamantes: " + elegido.cantidad + "\n" +
-    "Precio: " + moneda(elegido.precio) + "\n" +
-    "Estado: Sin pagar";
+// ========================================
+// CLAVE UNICA POR INTENTO
+// ========================================
+
+function nuevaClave() {
+  return "luxor_" +
+    crypto.randomUUID().replaceAll("-", "");
+}
+
+// ========================================
+// CONEXION A CREAR-PAGO
+// ========================================
+
+comprar.addEventListener("click", async () => {
+
+  if (
+    enviando ||
+    !elegido ||
+    !idValido() ||
+    !configurado()
+  ) {
+    return;
+  }
+
+  enviando = true;
+
+  comprar.disabled = true;
+
+  enlacePago.replaceChildren();
+
+  estado.textContent = "Preparando prueba";
+
+  mensaje.textContent =
+    "Creando una preferencia de pago de prueba...";
 
   try {
-    await navigator.clipboard.writeText(resumen);
+
+    const respuesta = await fetch(
+      SUPABASE_URL + "/functions/v1/crear-pago",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": SUPABASE_ANON_KEY,
+          "Authorization":
+            "Bearer " + SUPABASE_ANON_KEY,
+          "x-idempotency-key": nuevaClave()
+        },
+        body: JSON.stringify({
+          jugador_id: jugador.value.trim(),
+          paquete: String(elegido.cantidad)
+        })
+      }
+    );
+
+    const datos = await respuesta.json();
+
+    if (!respuesta.ok) {
+      throw new Error(
+        datos.error ||
+        "No se pudo crear el pedido de prueba."
+      );
+    }
+
+    if (
+      datos.modo !== "prueba" ||
+      typeof datos.init_point !== "string"
+    ) {
+      throw new Error(
+        "La respuesta no contiene un enlace de prueba válido."
+      );
+    }
+
+    const urlPago = new URL(datos.init_point);
+
+    if (
+      urlPago.protocol !== "https:" ||
+      !(
+        urlPago.hostname === "mercadopago.com" ||
+        urlPago.hostname.endsWith(".mercadopago.com") ||
+        urlPago.hostname === "mercadopago.com.pe" ||
+        urlPago.hostname.endsWith(".mercadopago.com.pe")
+      )
+    ) {
+      throw new Error(
+        "El enlace de Mercado Pago no es válido."
+      );
+    }
+
+    estado.textContent =
+      "Prueba creada, sin pagar";
 
     mensaje.textContent =
-      "Resumen copiado. Aún no se ha creado ni pagado un pedido.";
+      "Pedido de prueba #" +
+      datos.pedido_id +
+      ". No se ha confirmado ningún pago.";
 
-  } catch {
-    mensaje.textContent = resumen;
+    const enlace =
+      document.createElement("a");
+
+    enlace.href = urlPago.href;
+    enlace.target = "_blank";
+    enlace.rel = "noopener noreferrer";
+    enlace.className = "btn";
+
+    enlace.textContent =
+      "🧪 Abrir Mercado Pago de prueba";
+
+    enlacePago.appendChild(enlace);
+
+  } catch (error) {
+
+    estado.textContent = "Sin pagar";
+
+    mensaje.textContent =
+      error instanceof Error
+        ? error.message
+        : "Error desconocido";
+
+  } finally {
+
+    enviando = false;
+
+    actualizar();
+
   }
 
 });
+
+// ========================================
+// INICIAR TIENDA
+// ========================================
+
+actualizar();
 
 </script>
 
