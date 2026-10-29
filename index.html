@@ -1,36 +1,393 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LUXOR STORE</title>
-  <style>
-    body {
-      background: #101010;
-      color: white;
-      text-align: center;
-      font-family: Arial, sans-serif;
-      padding: 30px;
-    }
-    h1 { color: gold; }
-    .boton {
-      display: inline-block;
-      background: gold;
-      color: black;
-      padding: 15px 25px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LUXOR STORE | Free Fire</title>
+<style>
+:root{
+  --bg:#050b16;
+  --panel:#0c1930;
+  --blue:#1687ff;
+  --cyan:#38d9ff;
+  --line:#213956;
+  --text:#eef7ff;
+  --muted:#91aac9;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+header{
+  background:#081426;
+  border-bottom:1px solid var(--line);
+  padding:18px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+}
+.logo{
+  font-size:25px;
+  font-weight:900;
+  color:#fff;
+}
+.logo span{color:var(--cyan)}
+nav a{
+  color:#c5dcf7;
+  text-decoration:none;
+  margin-left:18px;
+  font-size:14px;
+}
+.hero{
+  padding:75px 20px;
+  text-align:center;
+  background:
+   radial-gradient(ellipse at top,#123d76,#050b16 75%);
+}
+.tag{
+  display:inline-block;
+  background:#123b63;
+  color:#80deff;
+  border:1px solid #2176b9;
+  border-radius:30px;
+  padding:10px 16px;
+  font-size:13px;
+}
+h1{
+  font-size:clamp(38px,7vw,70px);
+  margin:23px 0 12px;
+}
+h1 span{color:var(--cyan)}
+.hero p{
+  color:#b9d1ee;
+  line-height:1.7;
+}
+.btn{
+  display:inline-block;
+  padding:15px 26px;
+  margin-top:20px;
+  border:0;
+  border-radius:12px;
+  color:#fff;
+  font-weight:bold;
+  background:linear-gradient(135deg,#1263fa,#15b9ff);
+  cursor:pointer;
+  text-decoration:none;
+}
+.btn:disabled{
+  opacity:.5;
+  cursor:not-allowed;
+}
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:45px 20px;
+}
+h2{font-size:27px}
+.subtitle{color:var(--muted)}
+.steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:14px;
+  margin:25px 0 35px;
+}
+.step,.card,.box{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:22px;
+}
+.step strong{color:var(--cyan)}
+.step p{color:var(--muted);font-size:14px}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(225px,1fr));
+  gap:18px;
+  margin-top:25px;
+}
+.card{
+  cursor:pointer;
+  text-align:center;
+  transition:.2s;
+}
+.card:hover{
+  border-color:var(--blue);
+  transform:translateY(-3px);
+}
+.card.selected{
+  border:2px solid var(--cyan);
+  background:#102c4e;
+  box-shadow:0 0 22px #147dff33;
+}
+.diamond{
+  font-size:49px;
+  margin-bottom:15px;
+}
+.amount{
+  font-size:27px;
+  font-weight:900;
+}
+.card p{
+  color:var(--muted);
+  font-size:13px;
+}
+.price{
+  color:var(--cyan);
+  margin-top:17px;
+  font-weight:bold;
+}
+.small{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.6;
+}
+.checkout{
+  margin-top:38px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+input{
+  display:block;
+  width:100%;
+  padding:16px;
+  border:1px solid #365170;
+  border-radius:10px;
+  background:#081326;
+  color:white;
+  font-size:17px;
+  margin:14px 0;
+}
+input:focus{
+  outline:2px solid var(--cyan);
+}
+.summary{
+  background:#07152a;
+  border:1px solid var(--line);
+  padding:20px;
+  border-radius:12px;
+  line-height:2;
+}
+.notice{
+  background:#102137;
+  border-left:3px solid var(--cyan);
+  padding:15px;
+  margin-top:20px;
+  color:#cbdcf1;
+  font-size:14px;
+  line-height:1.6;
+}
+footer{
+  border-top:1px solid var(--line);
+  padding:30px 20px;
+  text-align:center;
+  color:var(--muted);
+}
+@media(max-width:680px){
+  .checkout{grid-template-columns:1fr}
+  nav a{margin:0 12px 0 0}
+}
+</style>
 </head>
+
 <body>
-  <h1>👑 LUXOR STORE 👑</h1>
-  <h2>Bienvenido a nuestra tienda</h2>
-  <p>Recargas de diamantes Free Fire 💎</p>
-  <p>¡Consulta nuestras promociones!</p>
-  <a class="boton" href="https://wa.me/51986511326">
-    Comprar por WhatsApp
-  </a>
+<header>
+  <div class="logo">💎 LUXOR <span>STORE</span></div>
+  <nav>
+    <a href="#paquetes">Diamantes</a>
+    <a href="#pedido">Mi pedido</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="tag">🎮 Tienda gamer • Región LATAM</div>
+  <h1>LUXOR <span>STORE</span></h1>
+  <p>
+    Tu espacio de recargas de Free Fire.<br>
+    Selecciona tus diamantes y prepara tu pedido.
+  </p>
+  <a href="#paquetes" class="btn">💎 Ver diamantes</a>
+</section>
+
+<main class="container">
+  <h2>¿Cómo funciona?</h2>
+  <div class="steps">
+    <div class="step">
+      <strong>01 • Tu ID</strong>
+      <p>Introduce el ID de tu cuenta de Free Fire.</p>
+    </div>
+    <div class="step">
+      <strong>02 • Diamantes</strong>
+      <p>Selecciona el paquete que deseas.</p>
+    </div>
+    <div class="step">
+      <strong>03 • Pedido</strong>
+      <p>Revisa los datos antes de continuar.</p>
+    </div>
+  </div>
+
+  <section id="paquetes">
+    <h2>💎 Diamantes Free Fire</h2>
+    <p class="subtitle">
+      Paquetes LATAM encontrados en RechargeGames.
+    </p>
+    <div class="grid" id="catalogo"></div>
+  </section>
+
+  <section class="checkout" id="pedido">
+    <div class="box">
+      <h2>🎮 Datos del jugador</h2>
+      <p class="subtitle">
+        Escribe tu ID exactamente como aparece en Free Fire.
+      </p>
+
+      <label for="jugador">ID de Free Fire</label>
+      <input
+        id="jugador"
+        type="text"
+        inputmode="numeric"
+        autocomplete="off"
+        maxlength="20"
+        placeholder="Ejemplo: 123456789"
+      >
+
+      <div class="notice">
+        🔒 Nunca necesitamos tu contraseña.
+        Revisa cuidadosamente tu ID antes de confirmar.
+      </div>
+    </div>
+
+    <div class="box">
+      <h2>🛒 Resumen del pedido</h2>
+      <div class="summary">
+        <div>Juego: <b>Free Fire</b></div>
+        <div>Región: <b>LATAM</b></div>
+        <div>Paquete: <b id="seleccion">Ninguno</b></div>
+        <div>ID: <b id="idResumen">Pendiente</b></div>
+        <div>Precio: <b>Por confirmar</b></div>
+        <div>Estado: <b>Sin pagar</b></div>
+      </div>
+
+      <button class="btn" id="preparar" disabled>
+        Preparar pedido
+      </button>
+      <p class="small" id="mensaje">
+        Elige un paquete e introduce tu ID.
+      </p>
+
+      <div class="notice">
+        ⚠️ Los pagos y las recargas automáticas
+        aún no están habilitados. No realices
+        transferencias hasta que la tienda
+        muestre un cobro oficial.
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  💎 LUXOR STORE<br><br>
+  Recargas de Free Fire • LATAM<br>
+  © 2026 LUXOR STORE
+</footer>
+
+<script>
+const paquetes = [
+  { cantidad:110, proveedor:0.68 },
+  { cantidad:341, proveedor:2.04 },
+  { cantidad:572, proveedor:3.46 },
+  { cantidad:1166, proveedor:6.30 },
+  { cantidad:2398, proveedor:12.70 },
+  { cantidad:6160, proveedor:31.70 }
+];
+
+let elegido = null;
+
+const catalogo = document.getElementById("catalogo");
+const jugador = document.getElementById("jugador");
+const seleccion = document.getElementById("seleccion");
+const idResumen = document.getElementById("idResumen");
+const preparar = document.getElementById("preparar");
+const mensaje = document.getElementById("mensaje");
+
+function actualizar(){
+  const id = jugador.value.trim();
+  idResumen.textContent = id || "Pendiente";
+  seleccion.textContent = elegido
+    ? elegido.cantidad + " diamantes"
+    : "Ninguno";
+
+  preparar.disabled = !elegido || !/^[0-9]{5,20}$/.test(id);
+}
+
+paquetes.forEach((p, indice) => {
+  const card = document.createElement("div");
+  card.className = "card";
+  card.tabIndex = 0;
+  card.setAttribute("role","button");
+  card.setAttribute("aria-pressed","false");
+
+  card.innerHTML = `
+    <div class="diamond">💎</div>
+    <div class="amount">${p.cantidad}</div>
+    <p>Diamantes Free Fire • LATAM</p>
+    <div class="price">Precio por confirmar</div>
+    <p>Seleccionar paquete</p>
+  `;
+
+  function elegir(){
+    elegido = p;
+    document.querySelectorAll(".card").forEach(c => {
+      c.classList.remove("selected");
+      c.setAttribute("aria-pressed","false");
+    });
+    card.classList.add("selected");
+    card.setAttribute("aria-pressed","true");
+    actualizar();
+    document.getElementById("pedido").scrollIntoView({
+      behavior:"smooth"
+    });
+  }
+
+  card.addEventListener("click", elegir);
+  card.addEventListener("keydown", e => {
+    if(e.key === "Enter" || e.key === " "){
+      e.preventDefault();
+      elegir();
+    }
+  });
+  catalogo.appendChild(card);
+});
+
+jugador.addEventListener("input", actualizar);
+
+preparar.addEventListener("click", async () => {
+  actualizar();
+  if(preparar.disabled) return;
+
+  const resumen =
+    "LUXOR STORE\n" +
+    "Juego: Free Fire\n" +
+    "Region: LATAM\n" +
+    "ID: " + jugador.value.trim() + "\n" +
+    "Diamantes: " + elegido.cantidad + "\n" +
+    "Precio: Pendiente\n" +
+    "Estado: Sin pagar";
+
+  try{
+    await navigator.clipboard.writeText(resumen);
+    mensaje.textContent =
+      "Resumen copiado. Aun no se ha creado ni pagado un pedido.";
+  }catch{
+    mensaje.textContent = resumen;
+  }
+});
+</script>
 </body>
 </html>
