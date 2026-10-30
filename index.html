@@ -4,43 +4,185 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#071426">
-<meta name="description" content="Compra diamantes Free Fire para LATAM en LUXOR STORE. Paga de forma segura con Mercado Pago.">
+<meta name="description" content="Compra diamantes Free Fire en LUXOR STORE. Paga con Yape y espera la verificación manual de tu pedido.">
 <title>LUXOR STORE | Diamantes Free Fire</title>
 <style>
-:root{--bg:#050b16;--panel:#0c1930;--blue:#1687ff;--cyan:#38d9ff;--line:#213956;--text:#eef7ff;--muted:#91aac9}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--text)}
+:root{--bg:#050b16;--panel:#0c1930;--blue:#1687ff;--cyan:#38d9ff;--line:#213956;--text:#eef7ff;--muted:#91aac9;--green:#35d69a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--text)}
 header{padding:18px 5%;background:#081426;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
-.logo{font-size:25px;font-weight:900}.logo span,h1 span{color:var(--cyan)}nav a{color:#c5dcf7;text-decoration:none;margin-left:18px;font-size:14px}
+.logo{font-size:25px;font-weight:900}
+.logo span,h1 span{color:var(--cyan)}
+nav a{color:#c5dcf7;text-decoration:none;margin-left:18px;font-size:14px}
 .hero{padding:75px 20px;text-align:center;background:radial-gradient(ellipse at top,#123d76,#050b16 75%)}
 .tag{display:inline-block;background:#123b63;color:#80deff;border:1px solid #2176b9;border-radius:30px;padding:10px 16px;font-size:13px}
-h1{font-size:clamp(38px,7vw,70px);margin:23px 0 12px}.hero p,.subtitle{color:#b9d1ee;line-height:1.7}
+h1{font-size:clamp(38px,7vw,70px);margin:23px 0 12px}
+.hero p,.subtitle{color:#b9d1ee;line-height:1.7}
 .btn{display:inline-block;padding:15px 25px;margin-top:20px;border:0;border-radius:12px;color:white;font-size:15px;font-weight:bold;background:linear-gradient(135deg,#1263fa,#15b9ff);cursor:pointer;text-decoration:none;text-align:center}
-.btn:disabled{opacity:.5;cursor:not-allowed}.container{max-width:1100px;margin:auto;padding:45px 20px}
-.steps,.grid{display:grid;gap:18px;margin-top:25px}.steps{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}.grid{grid-template-columns:repeat(auto-fit,minmax(225px,1fr))}
-.step,.card,.box{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}.step strong{color:var(--cyan)}.step p,.card p,.small{color:var(--muted);font-size:13px;line-height:1.6}
-.card{text-align:center;cursor:pointer;transition:.2s}.card:hover{transform:translateY(-3px);border-color:var(--blue)}.card.selected{border:2px solid var(--cyan);background:#102c4e}.card:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
-.diamond{font-size:49px;margin-bottom:15px}.amount{font-size:27px;font-weight:900}.price{color:var(--cyan);margin-top:17px;font-size:23px;font-weight:bold}
-.checkout{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:38px}input{width:100%;padding:16px;border:1px solid #365170;border-radius:10px;background:#081326;color:white;font-size:17px;margin:14px 0}input:focus{outline:2px solid var(--cyan)}
-.summary{background:#07152a;border:1px solid var(--line);padding:20px;border-radius:12px;line-height:2}.total{color:var(--cyan);font-size:22px}.notice{background:#102137;border-left:3px solid var(--cyan);padding:15px;margin-top:20px;color:#cbdcf1;font-size:14px;line-height:1.6}
-#mensaje{margin-top:16px;overflow-wrap:anywhere}footer{border-top:1px solid var(--line);padding:30px 20px;text-align:center;color:var(--muted);line-height:1.8}@media(max-width:680px){.checkout{grid-template-columns:1fr}nav a{margin:0 12px 0 0}}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn.secondary{background:#173452;border:1px solid #365170}
+.container{max-width:1100px;margin:auto;padding:45px 20px}
+.steps,.grid{display:grid;gap:18px;margin-top:25px}
+.steps{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.grid{grid-template-columns:repeat(auto-fit,minmax(225px,1fr))}
+.step,.card,.box{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}
+.step strong{color:var(--cyan)}
+.step p,.card p,.small{color:var(--muted);font-size:13px;line-height:1.6}
+.card{text-align:center;cursor:pointer;transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:var(--blue)}
+.card.selected{border:2px solid var(--cyan);background:#102c4e}
+.card:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.diamond{font-size:49px;margin-bottom:15px}
+.amount{font-size:27px;font-weight:900}
+.price{color:var(--cyan);margin-top:17px;font-size:23px;font-weight:bold}
+.checkout{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:38px}
+input{width:100%;padding:16px;border:1px solid #365170;border-radius:10px;background:#081326;color:white;font-size:17px;margin:14px 0}
+input:focus{outline:2px solid var(--cyan)}
+input:disabled{opacity:.7}
+.summary{background:#07152a;border:1px solid var(--line);padding:20px;border-radius:12px;line-height:2}
+.total{color:var(--cyan);font-size:22px}
+.notice{background:#102137;border-left:3px solid var(--cyan);padding:15px;margin-top:20px;color:#cbdcf1;font-size:14px;line-height:1.6}
+.payment{margin-top:18px;padding:20px;background:#0b2037;border:1px solid #2474a8;border-radius:14px}
+.payment h3{margin-top:0;color:var(--cyan)}
+.qr-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;margin:18px auto;padding:14px;background:#fff;border-radius:14px;max-width:360px}
+.qr-image{display:block;width:100%;max-width:320px;height:auto;object-fit:contain;image-rendering:auto}
+.qr-help{margin:0;color:#32123b;font-size:12px;font-weight:bold;text-align:center}
+.payment-line{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.payment-line:last-of-type{border-bottom:0}
+.payment strong{overflow-wrap:anywhere}
+.copy-btn{padding:8px 12px;border-radius:8px;border:1px solid #3c6386;background:#142f4d;color:#fff;cursor:pointer}
+#mensaje{margin-top:16px;overflow-wrap:anywhere}
+#enlacePago .btn{width:100%}
+footer{border-top:1px solid var(--line);padding:30px 20px;text-align:center;color:var(--muted);line-height:1.8}
+.hidden{display:none!important}
+@media(max-width:680px){.checkout{grid-template-columns:1fr}nav a{margin:0 12px 0 0}.payment-line{align-items:flex-start}}
 </style>
 </head>
 <body>
-<header><div class="logo">💎 LUXOR <span>STORE</span></div><nav><a href="#paquetes">Diamantes</a><a href="#pedido">Mi pedido</a></nav></header>
-<section class="hero"><div class="tag">🎮 Tienda gamer • Región LATAM</div><h1>LUXOR <span>STORE</span></h1><p>Tu tienda de diamantes Free Fire para LATAM.<br>Elige tu paquete y paga de forma segura.</p><a href="#paquetes" class="btn">💎 Ver diamantes</a></section>
+
+<header>
+  <div class="logo">💎 LUXOR <span>STORE</span></div>
+  <nav>
+    <a href="#paquetes">Diamantes</a>
+    <a href="#pedido">Mi pedido</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="tag">🎮 Tienda gamer • Región LATAM</div>
+  <h1>LUXOR <span>STORE</span></h1>
+  <p>Tu tienda de diamantes Free Fire para LATAM.<br>
+  Elige tu paquete, crea tu pedido y paga con Yape.</p>
+  <a href="#paquetes" class="btn">💎 Ver diamantes</a>
+</section>
+
 <main class="container">
-<h2>¿Cómo funciona?</h2><div class="steps"><div class="step"><strong>01 • Tu ID</strong><p>Introduce tu ID de Free Fire.</p></div><div class="step"><strong>02 • Diamantes</strong><p>Selecciona tu paquete.</p></div><div class="step"><strong>03 • Pago seguro</strong><p>Completa tu pago en Mercado Pago. La recarga se procesa al confirmarse el pago.</p></div></div>
-<section id="paquetes"><h2>💎 Diamantes Free Fire</h2><p class="subtitle">Paquetes para LATAM. Precios en soles peruanos.</p><div class="grid" id="catalogo"></div></section>
+
+<h2>¿Cómo funciona?</h2>
+
+<div class="steps">
+  <div class="step">
+    <strong>01 • Tu ID</strong>
+    <p>Introduce tu ID de Free Fire correctamente.</p>
+  </div>
+
+  <div class="step">
+    <strong>02 • Diamantes</strong>
+    <p>Selecciona el paquete que deseas comprar.</p>
+  </div>
+
+  <div class="step">
+    <strong>03 • Paga con Yape</strong>
+    <p>Escanea el QR y escribe el importe exacto de tu paquete.</p>
+  </div>
+
+  <div class="step">
+    <strong>04 • Verificación</strong>
+    <p>Verificamos que el pago haya llegado. No necesitas enviar comprobantes.</p>
+  </div>
+</div>
+
+<section id="paquetes">
+  <h2>💎 Diamantes Free Fire</h2>
+  <p class="subtitle">Paquetes para LATAM. Precios en soles peruanos.</p>
+  <div class="grid" id="catalogo"></div>
+</section>
+
 <section class="checkout" id="pedido">
-<div class="box"><h2>🎮 Datos del jugador</h2><p class="subtitle">Escribe tu ID exactamente como aparece en Free Fire.</p><label for="jugador">ID de Free Fire</label><input id="jugador" type="text" inputmode="numeric" autocomplete="off" maxlength="20" placeholder="Ejemplo: 123456789"><div class="notice">🔒 Nunca te pediremos tu contraseña. Revisa bien tu ID.</div></div>
-<div class="box"><h2>🛒 Resumen del pedido</h2><div class="summary"><div>Juego: <b>Free Fire</b></div><div>Región: <b>LATAM</b></div><div>Paquete: <b id="seleccion">Ninguno</b></div><div>ID: <b id="idResumen">Pendiente</b></div><div>Precio: <b class="total" id="precioResumen">S/ 0.00</b></div><div>Estado: <b id="estado">Sin pagar</b></div></div>
-<button class="btn" id="comprar" type="button" disabled>🔒 Continuar al pago seguro</button><div id="mensaje" class="small" aria-live="polite">Elige un paquete e introduce tu ID.</div><div id="enlacePago"></div><div class="notice">🔐 El pago se realiza en Mercado Pago. La recarga se solicita automáticamente después de que el pago sea confirmado. Verifica tu ID de jugador antes de pagar.</div></div>
-</section></main>
-<footer>💎 LUXOR STORE<br>Recargas Free Fire • LATAM<br>© 2026 LUXOR STORE</footer>
+
+  <div class="box">
+    <h2>🎮 Datos del jugador</h2>
+    <p class="subtitle">Escribe tu ID exactamente como aparece en Free Fire.</p>
+
+    <label for="jugador">ID de Free Fire</label>
+    <input id="jugador" type="text" inputmode="numeric"
+    autocomplete="off" maxlength="20"
+    placeholder="Ejemplo: 123456789">
+
+    <div class="notice">
+      🔒 Nunca te pediremos tu contraseña.
+      Revisa bien tu ID antes de crear el pedido.
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>🛒 Resumen del pedido</h2>
+
+    <div class="summary">
+      <div>Juego: <b>Free Fire</b></div>
+      <div>Región: <b>LATAM</b></div>
+      <div>Paquete: <b id="seleccion">Ninguno</b></div>
+      <div>ID: <b id="idResumen">Pendiente</b></div>
+      <div>Precio: <b class="total" id="precioResumen">S/ 0.00</b></div>
+      <div>Estado: <b id="estado">Sin pedido</b></div>
+      <div>Código: <b id="codigoResumen">—</b></div>
+    </div>
+
+    <button class="btn" id="comprar" type="button" disabled>
+      🟣 Crear pedido y pagar con Yape
+    </button>
+
+    <div id="mensaje" class="small" aria-live="polite">
+      Elige un paquete e introduce tu ID.
+    </div>
+
+    <div id="enlacePago"></div>
+
+    <button class="btn secondary hidden" id="nuevoPedido" type="button">
+      Crear otro pedido
+    </button>
+
+    <div class="notice">
+      El pedido comienza como pendiente. LUXOR STORE verificará
+      manualmente que el dinero haya llegado antes de procesar la recarga.
+      No envíes dinero si la página no te muestra un código de pedido.
+    </div>
+  </div>
+
+</section>
+</main>
+
+<footer>
+  💎 LUXOR STORE<br>
+  Recargas Free Fire • LATAM<br>
+  Pagos por Yape • Verificación manual<br>
+  © 2026 LUXOR STORE
+</footer>
+
 <script>
-// Clave pública (anon JWT) de Supabase, nunca service_role.
+
+// SUPABASE
 const SUPABASE_URL = "https://bfdjeuynxlejzipcdmmf.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmZGpldXlueGxlanppcGNkbW1mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI5Nzk2ODgsImV4cCI6MjEwODU1NTY4OH0.OciMVU6NtHuzeKG8saIiQ48NDfYyP7_QpPAeTbcYhHw";
+
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmZGpldXlueGxlanppY2RtbWYiLCJyb2xlIjoiYW5vbiIsImlhdCI6MTc5Mjk3OTY4OCwiZXhwIjoyMTA4NTU2NTY4fQ.OciMVU6NtHuzeKG8saIiQ48NDfYyP7_QpPAeTbcYhHw";
+
+// DATOS DE YAPE
+const YAPE_NUMERO = "920757455";
+const YAPE_TITULAR = "Jorge Q.";
+const YAPE_QR_DATA = "qr-yape.jpg";
+
+// PAQUETES
 const paquetes = [
   {cantidad:110,precio:2.79},
   {cantidad:341,precio:8.00},
@@ -49,86 +191,385 @@ const paquetes = [
   {cantidad:2398,precio:46.99},
   {cantidad:6160,precio:118.00}
 ];
+
 let elegido = null;
 let enviando = false;
 let intento = null;
+let pedidoActual = null;
+
 const $ = id => document.getElementById(id);
-const catalogo = $("catalogo"), jugador = $("jugador"), seleccion = $("seleccion"), idResumen = $("idResumen"), precioResumen = $("precioResumen"), comprar = $("comprar"), mensaje = $("mensaje"), estado = $("estado"), enlacePago = $("enlacePago");
-function moneda(n){return "S/ " + n.toFixed(2)}
-function idValido(){return /^[0-9]{5,20}$/.test(jugador.value.trim())}
-function configurado(){return SUPABASE_ANON_KEY.trim().length > 20}
-function actualizar(){
-  seleccion.textContent = elegido ? elegido.cantidad + " diamantes" : "Ninguno";
-  idResumen.textContent = jugador.value.trim() || "Pendiente";
-  precioResumen.textContent = elegido ? moneda(elegido.precio) : "S/ 0.00";
-  comprar.disabled = enviando || !elegido || !idValido() || !configurado() || Boolean(enlacePago.firstChild);
-  if(!configurado()) mensaje.textContent = "Conexión pendiente: falta la clave pública de Supabase.";
-  else if(!enviando && !enlacePago.firstChild && !elegido) mensaje.textContent = "Elige un paquete e introduce tu ID.";
-  else if(!enviando && !enlacePago.firstChild && !idValido()) mensaje.textContent = "Introduce un ID numérico válido de 5 a 20 dígitos.";
-  else if(!enviando && !enlacePago.firstChild && estado.textContent === "Sin pagar") mensaje.textContent = "Listo para continuar al pago seguro.";
+
+const catalogo = $("catalogo");
+const jugador = $("jugador");
+const seleccion = $("seleccion");
+const idResumen = $("idResumen");
+const precioResumen = $("precioResumen");
+const comprar = $("comprar");
+const mensaje = $("mensaje");
+const estado = $("estado");
+const codigoResumen = $("codigoResumen");
+const enlacePago = $("enlacePago");
+const nuevoPedido = $("nuevoPedido");
+
+function moneda(n){
+  return "S/ " + Number(n).toFixed(2);
 }
-function reiniciarIntento(){intento = null; enlacePago.replaceChildren(); estado.textContent = "Sin pagar"; actualizar()}
+
+function idValido(){
+  return /^[0-9]{5,20}$/.test(jugador.value.trim());
+}
+
+function configurado(){
+  return SUPABASE_URL.startsWith("https://") &&
+    SUPABASE_ANON_KEY.startsWith("eyJ") &&
+    !SUPABASE_ANON_KEY.includes("PEGA_AQUI");
+}
+
+function actualizar(){
+
+  seleccion.textContent = elegido
+    ? elegido.cantidad + " diamantes"
+    : "Ninguno";
+
+  idResumen.textContent = jugador.value.trim() || "Pendiente";
+
+  precioResumen.textContent = elegido
+    ? moneda(elegido.precio)
+    : "S/ 0.00";
+
+  comprar.disabled = enviando || Boolean(pedidoActual) ||
+    !elegido || !idValido() || !configurado();
+
+  if(!configurado()){
+    mensaje.textContent = "Conexión pendiente: revisa la clave pública de Supabase.";
+  }
+  else if(!pedidoActual && !elegido){
+    mensaje.textContent = "Elige un paquete e introduce tu ID.";
+  }
+  else if(!pedidoActual && !idValido()){
+    mensaje.textContent = "Introduce un ID numérico válido de 5 a 20 dígitos.";
+  }
+  else if(!pedidoActual && !enviando){
+    mensaje.textContent = "Listo para crear tu pedido.";
+  }
+}
+
+function nuevaClave(){
+  const uuid = (crypto.randomUUID
+    ? crypto.randomUUID().replaceAll("-","")
+    : Date.now().toString(36) + Math.random().toString(36).slice(2));
+
+  return "luxor_" + uuid;
+}
+
+function copiar(texto, boton, textoOk){
+
+  if(!navigator.clipboard || !navigator.clipboard.writeText){
+    mensaje.textContent = "No se pudo copiar automáticamente. Mantén pulsado el dato para copiarlo.";
+    return;
+  }
+
+  navigator.clipboard.writeText(texto).then(() => {
+
+    const anterior = boton.textContent;
+    boton.textContent = textoOk;
+
+    setTimeout(() => boton.textContent = anterior, 1800);
+
+  }).catch(() => {
+
+    mensaje.textContent = "No se pudo copiar. Copia el dato manualmente.";
+
+  });
+}
+
+function mostrarPedido(pedido, repetido){
+
+  pedidoActual = pedido;
+
+  const codigo = pedido.codigo_pedido;
+  const cantidad = Number(pedido.diamantes || (elegido && elegido.cantidad));
+  const precio = Number(pedido.precio || (elegido && elegido.precio));
+
+  estado.textContent = "Pendiente de verificación";
+  codigoResumen.textContent = codigo || "Revisa tu pedido";
+
+  jugador.disabled = true;
+  comprar.classList.add("hidden");
+  nuevoPedido.classList.remove("hidden");
+
+  mensaje.textContent = repetido
+    ? "Este pedido ya existía. Si aún no pagaste, escanea el QR y paga el importe exacto. No necesitas enviar comprobantes."
+    : "¡Pedido creado! Escanea el QR de Yape y paga el importe exacto. Tu pedido quedará pendiente de verificación.";
+
+  const panel = document.createElement("div");
+  panel.className = "payment";
+
+  const titulo = document.createElement("h3");
+  titulo.textContent = "🟣 Paga con Yape";
+  panel.appendChild(titulo);
+
+  const intro = document.createElement("p");
+  intro.className = "small";
+  intro.textContent = "Escanea este QR desde Yape y escribe el importe exacto que aparece abajo. Antes de confirmar, revisa que el destinatario sea el correcto.";
+  panel.appendChild(intro);
+
+  const qrWrap = document.createElement("div");
+  qrWrap.className = "qr-wrap";
+
+  const qr = document.createElement("img");
+  qr.className = "qr-image";
+  qr.alt = "Código QR de pago de Yape";
+  qr.src = YAPE_QR_DATA;
+
+  qrWrap.appendChild(qr);
+
+  const qrHelp = document.createElement("p");
+  qrHelp.className = "qr-help";
+  qrHelp.textContent = "QR de Yape • Ingresa el monto exacto de tu pedido";
+
+  qrWrap.appendChild(qrHelp);
+  panel.appendChild(qrWrap);
+
+  function fila(etiqueta, valor, botonTexto, copiarTexto){
+
+    const linea = document.createElement("div");
+    linea.className = "payment-line";
+
+    const izquierda = document.createElement("span");
+    izquierda.textContent = etiqueta;
+
+    const derecha = document.createElement("strong");
+    derecha.textContent = valor;
+
+    linea.append(izquierda, derecha);
+
+    if(botonTexto){
+
+      const boton = document.createElement("button");
+      boton.type = "button";
+      boton.className = "copy-btn";
+      boton.textContent = botonTexto;
+
+      boton.addEventListener("click", () =>
+        copiar(copiarTexto, boton, "Copiado ✓")
+      );
+
+      linea.appendChild(boton);
+    }
+
+    panel.appendChild(linea);
+  }
+
+  fila("Número de Yape", "920 757 455", "Copiar", YAPE_NUMERO);
+  fila("Titular", YAPE_TITULAR, null, null);
+  fila("Monto exacto", moneda(precio), "Copiar monto", precio.toFixed(2));
+  fila("Diamantes", String(cantidad), null, null);
+  fila("Código de pedido", codigo || "No disponible", "Copiar código", codigo || "");
+
+  const aviso = document.createElement("div");
+  aviso.className = "notice";
+  aviso.textContent = "Tu pedido queda pendiente mientras verificamos manualmente que el dinero haya llegado. No necesitas enviar comprobantes.";
+
+  panel.appendChild(aviso);
+
+  const pie = document.createElement("p");
+  pie.className = "small";
+  pie.textContent = "Estado actual: pendiente de verificación manual. La recarga solo se realizará después de confirmar que el pago llegó.";
+
+  panel.appendChild(pie);
+
+  enlacePago.replaceChildren(panel);
+}
+
+// MOSTRAR PAQUETES
+
+catalogo.replaceChildren();
+
 paquetes.forEach(p => {
+
   const card = document.createElement("div");
-  card.className = "card"; card.tabIndex = 0;
-  card.setAttribute("role", "button"); card.setAttribute("aria-pressed", "false");
-  card.innerHTML = `<div class="diamond">💎</div><div class="amount">${p.cantidad}</div><p>Diamantes Free Fire • LATAM</p><div class="price">${moneda(p.precio)}</div><p>Seleccionar paquete</p>`;
+  card.className = "card";
+  card.tabIndex = 0;
+  card.setAttribute("role", "button");
+  card.setAttribute("aria-pressed","false");
+
+  const diamante = document.createElement("div");
+  diamante.className = "diamond";
+  diamante.textContent = "💎";
+
+  const cantidad = document.createElement("div");
+  cantidad.className = "amount";
+  cantidad.textContent = String(p.cantidad);
+
+  const descripcion = document.createElement("p");
+  descripcion.textContent = "Diamantes Free Fire • LATAM";
+
+  const precio = document.createElement("div");
+  precio.className = "price";
+  precio.textContent = moneda(p.precio);
+
+  const seleccionar = document.createElement("p");
+  seleccionar.textContent = "Seleccionar paquete";
+
+  card.append(diamante, cantidad, descripcion, precio, seleccionar);
+
   function elegir(){
-    if(enviando) return;
+
+    if(enviando || pedidoActual) return;
+
     elegido = p;
-    document.querySelectorAll(".card").forEach(c => {c.classList.remove("selected");c.setAttribute("aria-pressed","false")});
-    card.classList.add("selected");card.setAttribute("aria-pressed","true");
-    reiniciarIntento();
+
+    document.querySelectorAll(".card").forEach(c => {
+      c.classList.remove("selected");
+      c.setAttribute("aria-pressed","false");
+    });
+
+    card.classList.add("selected");
+    card.setAttribute("aria-pressed","true");
+
+    intento = null;
+    actualizar();
+
     $("pedido").scrollIntoView({behavior:"smooth"});
   }
+
   card.addEventListener("click", elegir);
-  card.addEventListener("keydown", e => {if(e.key === "Enter" || e.key === " "){e.preventDefault();elegir()}});
+
+  card.addEventListener("keydown", e => {
+    if(e.key === "Enter" || e.key === " "){
+      e.preventDefault();
+      elegir();
+    }
+  });
+
   catalogo.appendChild(card);
 });
-jugador.addEventListener("input", () => {if(!enviando) reiniciarIntento()});
-function nuevaClave(){return "luxor_" + crypto.randomUUID().replaceAll("-", "")}
-function esMercadoPago(url){
-  try {
-    const u = new URL(url);
-    return u.protocol === "https:" && /(^|\.)mercadopago\.(com|com\.pe|com\.ar|com\.br|com\.mx|com\.co|cl|com\.uy)$/.test(u.hostname);
-  } catch {return false}
-}
-comprar.addEventListener("click", async () => {
-  if(enviando || !elegido || !idValido() || !configurado() || enlacePago.firstChild) return;
-  enviando = true; comprar.disabled = true;
-  estado.textContent = "Preparando pago";
-  mensaje.textContent = "Conectando con Mercado Pago de forma segura...";
-  // Conservar la misma clave en caso de fallo/reintento.
-  if(!intento) intento = nuevaClave();
-  try {
-    const respuesta = await fetch(SUPABASE_URL + "/functions/v1/crear-pago", {
-      method:"POST",
-      headers:{
-        "Content-Type":"application/json",
-        "apikey":SUPABASE_ANON_KEY,
-        "Authorization":"Bearer " + SUPABASE_ANON_KEY,
-        "x-idempotency-key":intento
-      },
-      body:JSON.stringify({jugador_id:jugador.value.trim(),paquete:String(elegido.cantidad)})
-    });
-    const datos = await respuesta.json();
-    if(!respuesta.ok) throw new Error(datos.error || "No se pudo crear el pago.");
-    if(datos.correcto !== true || datos.modo !== "produccion" || !esMercadoPago(datos.init_point)) throw new Error("No se recibió un enlace de pago de producción válido.");
-    estado.textContent = "Pendiente de pago";
-    mensaje.textContent = "Pedido #" + datos.pedido_id + " creado. Continúa en Mercado Pago para completar el pago. La recarga no se realizará hasta que el pago sea confirmado.";
-    const enlace = document.createElement("a");
-    enlace.href = datos.init_point;
-    enlace.target = "_blank";
-    enlace.rel = "noopener noreferrer";
-    enlace.className = "btn";
-    enlace.textContent = "💳 Abrir Mercado Pago y pagar";
-    enlacePago.appendChild(enlace);
-  } catch(error) {
-    estado.textContent = "Sin pagar";
-    mensaje.textContent = error instanceof Error ? error.message : "Error desconocido";
-  } finally {enviando = false;actualizar()}
+
+// VALIDAR ID
+
+jugador.addEventListener("input", () => {
+
+  if(!enviando && !pedidoActual){
+    intento = null;
+    actualizar();
+  }
+
 });
+
+// CREAR PEDIDO Y MOSTRAR YAPE
+
+comprar.addEventListener("click", async () => {
+
+  if(enviando || pedidoActual || !elegido ||
+     !idValido() || !configurado()) return;
+
+  enviando = true;
+  comprar.disabled = true;
+
+  estado.textContent = "Creando pedido";
+  mensaje.textContent = "Conectando con LUXOR STORE de forma segura...";
+
+  if(!intento) intento = nuevaClave();
+
+  try {
+
+    const respuesta = await fetch(
+      SUPABASE_URL + "/functions/v1/crear-pedido-yape",
+      {
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json",
+          "apikey":SUPABASE_ANON_KEY,
+          "Authorization":"Bearer " + SUPABASE_ANON_KEY
+        },
+        body:JSON.stringify({
+          jugador_id:jugador.value.trim(),
+          paquete:String(elegido.cantidad),
+          clave_idempotencia:intento
+        })
+      }
+    );
+
+    let datos;
+
+    try {
+      datos = await respuesta.json();
+    }
+    catch {
+      throw new Error("El servidor respondió con un formato inesperado. Intenta nuevamente.");
+    }
+
+    if(!respuesta.ok){
+      throw new Error(datos.error || "No se pudo crear el pedido.");
+    }
+
+    if(datos.correcto !== true ||
+       !datos.pedido ||
+       !datos.pedido.codigo_pedido){
+
+      throw new Error("El servidor no devolvió un código de pedido válido. Contacta con LUXOR STORE antes de pagar.");
+    }
+
+    mostrarPedido(datos.pedido, datos.repetido === true);
+
+  }
+  catch(error){
+
+    estado.textContent = "No se pudo crear";
+
+    mensaje.textContent = error instanceof Error
+      ? error.message
+      : "Error desconocido";
+
+    comprar.disabled = false;
+
+  }
+  finally {
+
+    enviando = false;
+    actualizar();
+
+    if(!pedidoActual){
+      comprar.disabled = !elegido || !idValido() || !configurado();
+    }
+
+  }
+
+});
+
+// CREAR OTRO PEDIDO
+
+nuevoPedido.addEventListener("click", () => {
+
+  pedidoActual = null;
+  elegido = null;
+  intento = null;
+
+  jugador.value = "";
+  jugador.disabled = false;
+
+  estado.textContent = "Sin pedido";
+  codigoResumen.textContent = "—";
+
+  enlacePago.replaceChildren();
+
+  comprar.classList.remove("hidden");
+  nuevoPedido.classList.add("hidden");
+
+  document.querySelectorAll(".card").forEach(c => {
+    c.classList.remove("selected");
+    c.setAttribute("aria-pressed","false");
+  });
+
+  actualizar();
+
+  $("paquetes").scrollIntoView({behavior:"smooth"});
+
+});
+
 actualizar();
+
 </script>
 </body>
 </html>
