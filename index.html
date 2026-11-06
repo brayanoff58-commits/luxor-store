@@ -1,722 +1,328 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#071426">
-<meta name="description" content="LUXOR STORE - Diamantes Free Fire. Integración de pagos en pruebas.">
-<title>LUXOR STORE | Diamantes Free Fire</title>
-<style>
-:root{
-  --bg:#050b16;
-  --panel:#0c1930;
-  --blue:#1687ff;
-  --cyan:#38d9ff;
-  --line:#213956;
-  --text:#eef7ff;
-  --muted:#91aac9;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
-header{
-  padding:18px 5%;
-  background:#081426;
-  border-bottom:1px solid var(--line);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:15px;
-}
-.logo{font-size:25px;font-weight:900}
-.logo span,h1 span{color:var(--cyan)}
-nav a{
-  color:#c5dcf7;
-  text-decoration:none;
-  margin-left:18px;
-  font-size:14px;
-}
-.hero{
-  padding:75px 20px;
-  text-align:center;
-  background:radial-gradient(
-    ellipse at top,#123d76,#050b16 75%
-  );
-}
-.tag{
-  display:inline-block;
-  background:#123b63;
-  color:#80deff;
-  border:1px solid #2176b9;
-  border-radius:30px;
-  padding:10px 16px;
-  font-size:13px;
-}
-h1{
-  font-size:clamp(38px,7vw,70px);
-  margin:23px 0 12px;
-}
-.hero p,.subtitle{
-  color:#b9d1ee;
-  line-height:1.7;
-}
-.btn{
-  display:inline-block;
-  padding:15px 25px;
-  margin-top:20px;
-  border:0;
-  border-radius:12px;
-  color:white;
-  font-size:15px;
-  font-weight:bold;
-  background:linear-gradient(135deg,#1263fa,#15b9ff);
-  cursor:pointer;
-  text-decoration:none;
-  text-align:center;
-}
-.btn:disabled{
-  opacity:.5;
-  cursor:not-allowed;
-}
-.btn.secondary{
-  background:#173452;
-  border:1px solid #365170;
-}
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:45px 20px;
-}
-.steps,.grid{
-  display:grid;
-  gap:18px;
-  margin-top:25px;
-}
-.steps{
-  grid-template-columns:repeat(
-    auto-fit,minmax(190px,1fr)
-  );
-}
-.grid{
-  grid-template-columns:repeat(
-    auto-fit,minmax(225px,1fr)
-  );
-}
-.step,.card,.box{
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:22px;
-}
-.step strong{color:var(--cyan)}
-.step p,.card p,.small{
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.6;
-}
-.card{
-  text-align:center;
-  cursor:pointer;
-  transition:.2s;
-}
-.card:hover{
-  transform:translateY(-3px);
-  border-color:var(--blue);
-}
-.card.selected{
-  border:2px solid var(--cyan);
-  background:#102c4e;
-}
-.card:focus-visible{
-  outline:2px solid var(--cyan);
-  outline-offset:3px;
-}
-.diamond{
-  font-size:49px;
-  margin-bottom:15px;
-}
-.amount{
-  font-size:27px;
-  font-weight:900;
-}
-.price{
-  color:var(--cyan);
-  margin-top:17px;
-  font-size:23px;
-  font-weight:bold;
-}
-.checkout{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:22px;
-  margin-top:38px;
-}
-input{
-  width:100%;
-  padding:16px;
-  border:1px solid #365170;
-  border-radius:10px;
-  background:#081326;
-  color:white;
-  font-size:17px;
-  margin:14px 0;
-}
-input:focus{outline:2px solid var(--cyan)}
-input:disabled{opacity:.7}
-.summary{
-  background:#07152a;
-  border:1px solid var(--line);
-  padding:20px;
-  border-radius:12px;
-  line-height:2;
-}
-.total{
-  color:var(--cyan);
-  font-size:22px;
-}
-.notice{
-  background:#102137;
-  border-left:3px solid var(--cyan);
-  padding:15px;
-  margin-top:20px;
-  color:#cbdcf1;
-  font-size:14px;
-  line-height:1.6;
-}
-#mensaje{
-  margin-top:16px;
-  overflow-wrap:anywhere;
-}
-#enlacePago .btn{
-  width:100%;
-}
-footer{
-  border-top:1px solid var(--line);
-  padding:30px 20px;
-  text-align:center;
-  color:var(--muted);
-  line-height:1.8;
-}
-.hidden{display:none!important}
-@media(max-width:680px){
-  .checkout{grid-template-columns:1fr}
-  nav a{margin:0 12px 0 0}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050b17">
+  <meta name="description" content="BELVORA ELEGANCIA: moda, polos, prendas y accesorios con estilo. Emprendimiento desde Arequipa, Perú.">
+  <link rel="canonical" href="https://belvora.pages.dev/">
+  <title>BELVORA | Elegancia, moda y accesorios</title>
+  <style>
+    :root{--bg:#050912;--bg2:#0b1730;--card:#101b2e;--line:#24416a;--blue:#078dff;--ice:#69d8ff;--text:#f5f9ff;--soft:#aabbd2}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#102c57 0%,transparent 33%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid var(--ice);outline-offset:4px}
+    .wrap{max-width:1140px;margin:auto;padding:0 18px}
+    .bar{position:sticky;top:0;z-index:10;border-bottom:1px solid #254367;background:#060c18ec;backdrop-filter:blur(16px)}
+    .bar-inner{max-width:1140px;margin:auto;padding:15px 18px;display:flex;justify-content:space-between;align-items:center;gap:14px}
+    .brand{font-size:20px;font-weight:900;letter-spacing:2px}.brand span{color:var(--ice)}.smallbrand{display:block;font-size:9px;letter-spacing:4px;font-weight:600;color:#b4c7df}
+    .nav{display:flex;gap:17px;align-items:center;font-size:13px;color:#e6f0fc;flex-wrap:wrap}.nav a:hover{color:var(--ice)}
+    .hero{border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 50% 15%,#124487 0%,#07132a 49%,#050912 90%)}
+    .hero-inner{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px;min-height:485px;padding:55px 18px}
+    .eyebrow{display:inline-block;background:#0b345a;color:var(--ice);padding:8px 13px;border:1px solid #2677ae;border-radius:30px;font-size:12px;letter-spacing:1.4px;font-weight:700}
+    h1{font-size:clamp(43px,6vw,78px);line-height:1.04;margin:18px 0 10px;letter-spacing:-1.5px}h1 span{color:var(--ice)}
+    .lead{color:#b9cce7;line-height:1.7;max-width:530px;margin:0 0 20px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(125deg,#066be5,#11bfff);color:white;border:0;padding:14px 22px;border-radius:13px;font-size:14px;font-weight:800;box-shadow:0 8px 26px #008cff31}
+    .btn:hover{filter:brightness(1.1)}.btn.alt{background:#12253e;border:1px solid #355c80;box-shadow:none}.btn.small{font-size:13px;padding:11px 16px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:11px}.hero-image{border-radius:26px;overflow:hidden;min-height:350px;border:1px solid #315380;background:radial-gradient(circle,#164a90,#030712 72%);box-shadow:0 20px 55px #0009,0 0 40px #008cff2a;display:flex;align-items:center;justify-content:center}
+    .hero-image img{display:block;width:100%;height:100%;max-height:490px;object-fit:cover}.fallback-logo{font-family:Georgia,serif;font-size:95px;font-weight:900;color:#e7f6ff;text-shadow:0 0 24px #078dff;display:none}
+    section{padding:62px 0}h2{font-size:clamp(27px,4vw,36px);margin:0 0 8px}.sub{color:var(--soft);line-height:1.6;margin:0 0 27px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}.chip{border:1px solid #24476c;background:#0b1a30;color:#c9d9ed;border-radius:999px;padding:10px 17px}.chip.active{background:#0b74d1;color:white;border-color:#21adff}
+    .products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}.product{overflow:hidden;background:linear-gradient(160deg,#111f36,#0a1424);border:1px solid #223b5c;border-radius:19px;transition:transform .2s,border-color .2s}.product:hover{transform:translateY(-4px);border-color:var(--ice)}
+    .photo{height:245px;background:linear-gradient(135deg,#244675,#060c16);position:relative;overflow:hidden}.photo img{height:100%;width:100%;object-fit:cover;display:block}.photo em{position:absolute;top:12px;left:12px;background:#04101dcf;color:#cce8ff;border:1px solid #5b7896;border-radius:6px;padding:6px 9px;font-size:10px;font-style:normal;text-transform:uppercase;letter-spacing:1px}
+    .product-body{padding:18px}.category{font-size:11px;letter-spacing:1.4px;color:var(--ice);font-weight:800;text-transform:uppercase}.product h3{margin:8px 0 8px;font-size:19px}.product p{color:var(--soft);font-size:13px;line-height:1.5;min-height:38px;margin:0 0 16px}.price{font-weight:800;color:#e8f8ff;margin-bottom:14px}.product .btn{width:100%}
+    .banner{background:linear-gradient(110deg,#0b2445,#0c1322);border:1px solid #305782;border-radius:18px;padding:19px;color:#bcd0e9;margin-top:22px;font-size:13px;line-height:1.7}
+    .two{display:grid;grid-template-columns:1.3fr 1fr;gap:24px}.panel{background:linear-gradient(145deg,#10213b,#080f1d);border:1px solid #284468;border-radius:20px;padding:30px}.panel p{color:#b2c6e1;line-height:1.7}.check{display:grid;gap:16px;margin-top:20px}.check div{border-left:3px solid #1eaaff;padding-left:15px;font-size:14px;color:#d1e0f3}
+    .qr{display:block;max-width:245px;width:100%;margin:17px auto;border-radius:14px;background:white;padding:10px}.qr-msg{font-size:13px;text-align:center;color:#bdd1e6}.info{margin-top:20px;background:#0b243d;border-left:3px solid #54c8ff;padding:13px 15px;color:#c9deef;font-size:13px;line-height:1.6;border-radius:8px}
+    footer{border-top:1px solid #24416a;background:#050a15;color:#9cafc9;text-align:center;padding:28px 18px;line-height:1.8;font-size:13px}footer strong{color:#eff8ff}
+    #avisos{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#e0f5ff;color:#03152a;max-width:min(520px,90vw);padding:13px 19px;z-index:30;border-radius:12px;box-shadow:0 10px 30px #0008;display:none;font-size:14px;text-align:center}
+    @media(max-width:920px){.products{grid-template-columns:repeat(2,minmax(0,1fr))}.photo{height:260px}}
+    @media(max-width:640px){.nav{gap:11px}.hero-inner{grid-template-columns:1fr;padding:38px 18px}.hero-image{min-height:240px}.hero-image img{max-height:340px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.photo{height:180px}.product-body{padding:13px}.product h3{font-size:16px}.product p{font-size:12px;min-height:50px}.two{grid-template-columns:1fr}.panel{padding:22px}.bar-inner{align-items:flex-start;flex-wrap:wrap}}
+    @media(max-width:380px){.products{grid-template-columns:1fr}.photo{height:290px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.product{transition:none}}
+  </style>
 </head>
 <body>
-
-<header>
-  <div class="logo">💎 LUXOR <span>STORE</span></div>
-  <nav>
-    <a href="#paquetes">Diamantes</a>
-    <a href="#pedido">Mi pedido</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <div class="tag">🎮 Tienda gamer • Región LATAM</div>
-  <h1>LUXOR <span>STORE</span></h1>
-  <p>
-    Tu tienda de diamantes Free Fire.<br>
-    Elige tu paquete e inicia el pago de prueba.
-  </p>
-  <a href="#paquetes" class="btn">
-    💎 Ver diamantes
-  </a>
-</section>
-
-<main class="container">
-
-<h2>¿Cómo funciona?</h2>
-
-<div class="steps">
-  <div class="step">
-    <strong>01 • Tu ID</strong>
-    <p>Introduce tu ID de Free Fire correctamente.</p>
-  </div>
-
-  <div class="step">
-    <strong>02 • Diamantes</strong>
-    <p>Selecciona el paquete que deseas comprar.</p>
-  </div>
-
-  <div class="step">
-    <strong>03 • Mercado Pago</strong>
-    <p>Abre el checkout de prueba para ver los métodos disponibles.</p>
-  </div>
-
-  <div class="step">
-    <strong>04 • Confirmación</strong>
-    <p>El servidor verifica los pagos de prueba. No se entregan diamantes.</p>
-  </div>
-</div>
-
-<section id="paquetes">
-  <h2>💎 Diamantes Free Fire</h2>
-  <p class="subtitle">
-    Paquetes para LATAM. Precios en soles peruanos.
-  </p>
-  <div class="grid" id="catalogo"></div>
-</section>
-
-<section class="checkout" id="pedido">
-
-  <div class="box">
-    <h2>🎮 Datos del jugador</h2>
-    <p class="subtitle">
-      Escribe tu ID exactamente como aparece en Free Fire.
-    </p>
-
-    <label for="jugador">ID de Free Fire</label>
-
-    <input
-      id="jugador"
-      type="text"
-      inputmode="numeric"
-      autocomplete="off"
-      maxlength="20"
-      placeholder="Ejemplo: 123456789"
-    >
-
-    <div class="notice">
-      🔒 Nunca te pediremos tu contraseña.
-      Revisa bien tu ID antes de crear el pedido.
+  <header class="bar">
+    <div class="bar-inner">
+      <a class="brand" href="#inicio">BEL<span>VORA</span><small class="smallbrand">ELEGANCIA</small></a>
+      <nav class="nav" aria-label="Navegación">
+        <a href="#catalogo">Ropa</a><a href="#nosotros">Nosotros</a><a href="#yape">Yape</a>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <div class="box">
-    <h2>🛒 Resumen del pedido</h2>
-
-    <div class="summary">
-      <div>Juego: <b>Free Fire</b></div>
-      <div>Región: <b>LATAM</b></div>
-      <div>Paquete: <b id="seleccion">Ninguno</b></div>
-      <div>ID: <b id="idResumen">Pendiente</b></div>
-      <div>
-        Precio:
-        <b class="total" id="precioResumen">S/ 0.00</b>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="wrap hero-inner">
+        <div>
+          <span class="eyebrow">✦ MODA CON ACTITUD</span>
+          <h1>BELVORA <span>ELEGANCIA</span></h1>
+          <p class="lead">Tu estilo, tu esencia. Polos, prendas y accesorios para destacar cada día. Desde Arequipa, Perú.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#catalogo">Explorar colección ↗</a>
+            <a class="btn alt" href="#yape">Ver Yape</a>
+          </div>
+        </div>
+        <div class="hero-image" aria-label="Logo BELVORA">
+          <img src="belvora-logo.png" alt="Logotipo BELVORA ELEGANCIA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="fallback-logo">B</span>
+        </div>
       </div>
-      <div>Estado: <b id="estado">Sin pedido</b></div>
-      <div>Código: <b id="codigoResumen">—</b></div>
-    </div>
+    </section>
 
-    <button
-      class="btn"
-      id="comprar"
-      type="button"
-      disabled
-    >
-      💳 Continuar a Mercado Pago (prueba)
-    </button>
+    <section class="wrap" id="catalogo">
+      <h2>Descubre nuestra colección</h2>
+      <p class="sub">Moda urbana y elegante. Muy pronto mostraremos nuestras fotos, tallas y precios reales.</p>
+      <div class="chips" id="filtros" aria-label="Filtrar categorías"></div>
+      <div class="products" id="productos"></div>
+      <div class="banner">📸 <strong>Catálogo en preparación:</strong> estas fotos son referenciales y los artículos son ejemplos. Aún no representan existencias ni precios confirmados de BELVORA.</div>
+    </section>
 
-    <div id="mensaje" class="small" aria-live="polite">
-      Elige un paquete e introduce tu ID.
-    </div>
+    <section class="wrap" id="nosotros">
+      <div class="two">
+        <div class="panel">
+          <span class="eyebrow">NUESTRA ESENCIA</span>
+          <h2 style="margin-top:17px">Elegancia que se siente.</h2>
+          <p>En BELVORA ELEGANCIA estamos construyendo una tienda de moda para quienes buscan vestir con personalidad. Nuestro emprendimiento nace en Arequipa y queremos llevar nuestro estilo a más personas.</p>
+          <div class="check">
+            <div>✦ Polos, ropa urbana y accesorios.</div>
+            <div>✦ Consultas de tallas y disponibilidad.</div>
+            <div>✦ Próximamente: opciones de envío nacional e internacional.</div>
+          </div>
+        </div>
 
-    <div id="enlacePago"></div>
+        <div class="panel" id="yape">
+          <h2>💜 Pago por Yape</h2>
+          <p>Conservamos nuestro código QR. <strong>Consulta y confirma tu pedido y el monto antes de realizar cualquier pago.</strong></p>
+          <img class="qr" src="qr-yape.jpg" alt="Código QR de Yape de la tienda" onerror="this.style.display='none';document.getElementById('noqr').hidden=false">
+          <p id="noqr" class="qr-msg" hidden>Para mostrar el QR, verifica que el archivo <strong>qr-yape.jpg</strong> esté subido al repositorio.</p>
+          <p class="qr-msg">Escanea el QR desde tu aplicación Yape.</p>
+          <div class="info">⚠️ El QR no confirma pagos automáticamente. Los pedidos y pagos se verificarán manualmente hasta implementar el sistema correspondiente.</div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <button
-      class="btn secondary hidden"
-      id="nuevoPedido"
-      type="button"
-    >
-      Crear otro pedido
-    </button>
+  <footer>
+    <strong>BELVORA ELEGANCIA</strong> · Arequipa, Perú<br>
+    Moda · Estilo · Exclusividad<br>
+    <span id="anio"></span> © BELVORA.
+    <a href="#inicio">Volver arriba ↑</a>
+  </footer>
 
-    <div class="notice">
-      🧪 Modo de prueba. No realices pagos con dinero
-      real. La disponibilidad de Yape depende de
-      Mercado Pago. Las recargas están desactivadas.
-    </div>
-  </div>
+  <div id="avisos" role="status" aria-live="polite"></div>
 
-</section>
-</main>
+  <script>
+    "use strict";
 
-<footer>
-  💎 LUXOR STORE<br>
-  Recargas Free Fire • LATAM<br>
-  Integración de pagos en pruebas<br>
-  © 2026 LUXOR STORE
-</footer>
+    // CATÁLOGO DE EJEMPLO.
+    // Después colocaremos tus productos reales.
 
-<script>
-"use strict";
-
-// CONFIGURACIÓN SUPABASE
-
-const SUPABASE_URL =
-  "https://bfdjeuynxlejzipcdmmf.supabase.co";
-
-// Clave pública anon de Supabase.
-// Nunca colocar aquí service_role ni tokens privados.
-const SUPABASE_ANON_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmZGpldXlueGxlanppY2RtbWYiLCJyb2xlIjoiYW5vbiIsImlhdCI6MTc5Mjk3OTY4OCwiZXhwIjoyMTA4NTU2NTY4fQ.OciMVU6NtHuzeKG8saIiQ48NDfYyP7_QpPAeTbcYhHw";
-
-// PAQUETES
-
-const paquetes = [
-  { cantidad:110, precio:2.79 },
-  { cantidad:341, precio:8.00 },
-  { cantidad:572, precio:12.89 },
-  { cantidad:1166, precio:23.89 },
-  { cantidad:2398, precio:46.99 },
-  { cantidad:6160, precio:118.00 }
-];
-
-let elegido = null;
-let enviando = false;
-let intento = null;
-let pedidoActual = null;
-
-const $ = id => document.getElementById(id);
-
-const catalogo = $("catalogo");
-const jugador = $("jugador");
-const seleccion = $("seleccion");
-const idResumen = $("idResumen");
-const precioResumen = $("precioResumen");
-const comprar = $("comprar");
-const mensaje = $("mensaje");
-const estado = $("estado");
-const codigoResumen = $("codigoResumen");
-const enlacePago = $("enlacePago");
-const nuevoPedido = $("nuevoPedido");
-
-function moneda(n) {
-  return "S/ " + Number(n).toFixed(2);
-}
-
-function idValido() {
-  return /^[0-9]{5,20}$/.test(jugador.value.trim());
-}
-
-function configurado() {
-  return (
-    SUPABASE_URL.startsWith("https://") &&
-    SUPABASE_ANON_KEY.startsWith("eyJ") &&
-    !SUPABASE_ANON_KEY.includes("PEGA_AQUI")
-  );
-}
-
-function actualizar() {
-  seleccion.textContent = elegido
-    ? elegido.cantidad + " diamantes"
-    : "Ninguno";
-
-  idResumen.textContent =
-    jugador.value.trim() || "Pendiente";
-
-  precioResumen.textContent = elegido
-    ? moneda(elegido.precio)
-    : "S/ 0.00";
-
-  comprar.disabled =
-    enviando ||
-    Boolean(pedidoActual) ||
-    !elegido ||
-    !idValido() ||
-    !configurado();
-
-  if (!configurado()) {
-    mensaje.textContent =
-      "Conexión pendiente: revisa la clave pública de Supabase.";
-  } else if (!pedidoActual && !enviando) {
-    if (!elegido) {
-      mensaje.textContent =
-        "Elige un paquete e introduce tu ID.";
-    } else if (!idValido()) {
-      mensaje.textContent =
-        "Introduce un ID numérico válido de 5 a 20 dígitos.";
-    } else {
-      mensaje.textContent =
-        "Listo para crear tu pago de prueba.";
-    }
-  }
-}
-
-function nuevaClave() {
-  if (!crypto.randomUUID) {
-    throw new Error(
-      "Tu navegador no admite identificadores seguros."
-    );
-  }
-
-  return "luxor_" +
-    crypto.randomUUID().replaceAll("-", "");
-}
-
-function enlaceSeguro(valor) {
-  if (typeof valor !== "string") return false;
-
-  try {
-    const url = new URL(valor);
-
-    const dominios = [
-      "mercadopago.com",
-      "mercadopago.com.pe",
-      "mercadopago.com.ar",
-      "mercadopago.com.br",
-      "mercadopago.com.mx",
-      "mercadopago.com.co",
-      "mercadopago.cl",
-      "mercadopago.com.uy"
+    const productos = [
+      {
+        id:1,
+        nombre:"Polo clásico",
+        tipo:"Polos",
+        detalle:"Diseño versátil para todos los días.",
+        foto:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=850&q=85"
+      },
+      {
+        id:2,
+        nombre:"Polo urbano",
+        tipo:"Polos",
+        detalle:"Estilo casual, para combinar a tu manera.",
+        foto:"https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=850&q=85"
+      },
+      {
+        id:3,
+        nombre:"Casaca urbana",
+        tipo:"Casacas",
+        detalle:"Complementa tus looks de temporada.",
+        foto:"https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=850&q=85"
+      },
+      {
+        id:4,
+        nombre:"Pantalón denim",
+        tipo:"Pantalones",
+        detalle:"Un básico para un look con personalidad.",
+        foto:"https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=850&q=85"
+      },
+      {
+        id:5,
+        nombre:"Accesorios",
+        tipo:"Accesorios",
+        detalle:"Detalles que complementan tu estilo.",
+        foto:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=850&q=85"
+      },
+      {
+        id:6,
+        nombre:"Nueva colección",
+        tipo:"Casacas",
+        detalle:"Próximamente nuevos modelos.",
+        foto:"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=850&q=85"
+      }
     ];
 
-    return (
-      url.protocol === "https:" &&
-      dominios.some(
-        dominio =>
-          url.hostname === dominio ||
-          url.hostname.endsWith("." + dominio)
-      )
-    );
-  } catch {
-    return false;
-  }
-}
+    // Aquí pondremos luego el WhatsApp de BELVORA.
+    const tiendaWhatsApp = "";
 
-function mostrarEnlace(datos) {
-  pedidoActual = {
-    id: datos.pedido_id,
-    enlace: datos.init_point
-  };
+    const caja = document.getElementById("productos");
+    const filtro = document.getElementById("filtros");
+    const aviso = document.getElementById("avisos");
 
-  estado.textContent = "Pago de prueba pendiente";
-  codigoResumen.textContent =
-    String(datos.pedido_id);
+    let categoria = "Todos";
 
-  jugador.disabled = true;
-  comprar.classList.add("hidden");
-  nuevoPedido.classList.remove("hidden");
+    const categorias = [
+      "Todos",
+      "Polos",
+      "Pantalones",
+      "Casacas",
+      "Accesorios"
+    ];
 
-  mensaje.textContent =
-    "Pedido creado. Puedes abrir el checkout de prueba de Mercado Pago. No confirmes ningún cobro real.";
+    const mostrarAviso = texto => {
+      aviso.textContent = texto;
+      aviso.style.display = "block";
+      setTimeout(() => {
+        aviso.style.display = "none";
+      }, 3900);
+    };
 
-  const panel = document.createElement("div");
-  panel.className = "notice";
+    function dibujarFiltros() {
+      filtro.replaceChildren();
 
-  const texto = document.createElement("p");
-  texto.textContent =
-    "Enlace de prueba generado para el pedido #" +
-    datos.pedido_id + ".";
+      categorias.forEach(cat => {
+        const boton = document.createElement("button");
 
-  const boton = document.createElement("a");
-  boton.className = "btn";
-  boton.textContent =
-    "💳 Abrir Mercado Pago (prueba)";
-  boton.href = datos.init_point;
-  boton.rel = "noopener noreferrer";
-  boton.target = "_blank";
+        boton.type = "button";
+        boton.className = "chip" + (
+          categoria === cat ? " active" : ""
+        );
+        boton.textContent = cat;
+        boton.setAttribute(
+          "aria-pressed",
+          String(categoria === cat)
+        );
 
-  panel.append(texto, boton);
-  enlacePago.replaceChildren(panel);
-}
+        boton.onclick = () => {
+          categoria = cat;
+          dibujarFiltros();
+          dibujarProductos();
+        };
 
-// MOSTRAR PAQUETES
-
-catalogo.replaceChildren();
-
-paquetes.forEach(p => {
-  const card = document.createElement("div");
-  card.className = "card";
-  card.tabIndex = 0;
-  card.setAttribute("role", "button");
-  card.setAttribute("aria-pressed", "false");
-
-  const diamante = document.createElement("div");
-  diamante.className = "diamond";
-  diamante.textContent = "💎";
-
-  const cantidad = document.createElement("div");
-  cantidad.className = "amount";
-  cantidad.textContent = String(p.cantidad);
-
-  const descripcion = document.createElement("p");
-  descripcion.textContent =
-    "Diamantes Free Fire • LATAM";
-
-  const precio = document.createElement("div");
-  precio.className = "price";
-  precio.textContent = moneda(p.precio);
-
-  const seleccionar = document.createElement("p");
-  seleccionar.textContent = "Seleccionar paquete";
-
-  card.append(
-    diamante,
-    cantidad,
-    descripcion,
-    precio,
-    seleccionar
-  );
-
-  function elegir() {
-    if (enviando || pedidoActual) return;
-
-    elegido = p;
-
-    document.querySelectorAll(".card")
-      .forEach(c => {
-        c.classList.remove("selected");
-        c.setAttribute("aria-pressed", "false");
+        filtro.appendChild(boton);
       });
-
-    card.classList.add("selected");
-    card.setAttribute("aria-pressed", "true");
-
-    intento = null;
-    actualizar();
-
-    $("pedido").scrollIntoView({
-      behavior: "smooth"
-    });
-  }
-
-  card.addEventListener("click", elegir);
-
-  card.addEventListener("keydown", e => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      elegir();
     }
-  });
 
-  catalogo.appendChild(card);
-});
+    function dibujarProductos() {
+      caja.replaceChildren();
 
-// VALIDAR ID
+      productos
+        .filter(p =>
+          categoria === "Todos" ||
+          p.tipo === categoria
+        )
+        .forEach(p => {
+          const card = document.createElement("article");
+          card.className = "product";
 
-jugador.addEventListener("input", () => {
-  if (!enviando && !pedidoActual) {
-    intento = null;
-    actualizar();
-  }
-});
+          const foto = document.createElement("div");
+          foto.className = "photo";
 
-// CREAR PAGO CON MERCADO PAGO
+          const img = document.createElement("img");
+          img.src = p.foto;
+          img.alt = "Foto referencial: " + p.nombre;
+          img.loading = "lazy";
 
-comprar.addEventListener("click", async () => {
-  if (
-    enviando ||
-    pedidoActual ||
-    !elegido ||
-    !idValido() ||
-    !configurado()
-  ) return;
+          img.onerror = () => {
+            img.style.display = "none";
+            foto.style.background =
+              "linear-gradient(140deg,#173c6b,#050b17)";
+          };
 
-  enviando = true;
-  comprar.disabled = true;
+          const etiqueta = document.createElement("em");
+          etiqueta.textContent = "Imagen de ejemplo";
 
-  estado.textContent = "Creando pago de prueba";
-  mensaje.textContent =
-    "Conectando con Mercado Pago...";
+          foto.append(img, etiqueta);
 
-  try {
-    if (!intento) intento = nuevaClave();
+          const cuerpo = document.createElement("div");
+          cuerpo.className = "product-body";
 
-    const respuesta = await fetch(
-      SUPABASE_URL + "/functions/v1/crear-pago",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "apikey": SUPABASE_ANON_KEY,
-          "Authorization":
-            "Bearer " + SUPABASE_ANON_KEY,
-          "x-idempotency-key": intento
-        },
-        body: JSON.stringify({
-          jugador_id: jugador.value.trim(),
-          paquete: String(elegido.cantidad),
-          clave_idempotencia: intento
-        })
+          const tipo = document.createElement("div");
+          tipo.className = "category";
+          tipo.textContent = p.tipo;
+
+          const nombre = document.createElement("h3");
+          nombre.textContent = p.nombre;
+
+          const detalle = document.createElement("p");
+          detalle.textContent = p.detalle;
+
+          const precio = document.createElement("div");
+          precio.className = "price";
+          precio.textContent = "Precio por confirmar";
+
+          const boton = document.createElement("button");
+          boton.type = "button";
+          boton.className = "btn small";
+          boton.textContent = "Consultar modelo";
+          boton.onclick = () => consultar(p.nombre);
+
+          cuerpo.append(
+            tipo,
+            nombre,
+            detalle,
+            precio,
+            boton
+          );
+
+          card.append(foto, cuerpo);
+          caja.appendChild(card);
+        });
+    }
+
+    async function consultar(nombre) {
+      const mensaje =
+        "Hola, BELVORA ELEGANCIA. Quiero consultar por: " +
+        nombre +
+        ". ¿Tienen modelos, tallas y precios disponibles?";
+
+      if (/^\d{10,15}$/.test(tiendaWhatsApp)) {
+        window.open(
+          "https://wa.me/" +
+          tiendaWhatsApp +
+          "?text=" +
+          encodeURIComponent(mensaje),
+          "_blank",
+          "noopener,noreferrer"
+        );
+      } else if (navigator.share) {
+        try {
+          await navigator.share({
+            title:"Consulta BELVORA",
+            text:mensaje
+          });
+        } catch(e) {}
+      } else if (navigator.clipboard) {
+        try {
+          await navigator.clipboard.writeText(mensaje);
+          mostrarAviso(
+            "Consulta copiada. Envíala a la tienda por WhatsApp."
+          );
+        } catch(e) {
+          window.prompt("Copia tu consulta:", mensaje);
+        }
+      } else {
+        window.prompt("Copia tu consulta:", mensaje);
       }
-    );
-
-    let datos;
-
-    try {
-      datos = await respuesta.json();
-    } catch {
-      throw new Error(
-        "El servidor devolvió una respuesta inesperada."
-      );
     }
 
-    if (!respuesta.ok) {
-      throw new Error(
-        datos.error ||
-        "No se pudo crear el pago."
-      );
-    }
+    document.getElementById("anio").textContent =
+      new Date().getFullYear();
 
-    if (
-      datos.correcto !== true ||
-      datos.modo !== "prueba" ||
-      !datos.pedido_id ||
-      !enlaceSeguro(datos.init_point)
-    ) {
-      throw new Error(
-        "El servidor no devolvió un enlace de prueba válido."
-      );
-    }
+    dibujarFiltros();
+    dibujarProductos();
 
-    mostrarEnlace(datos);
-
-  } catch (error) {
-    estado.textContent = "No se pudo crear";
-
-    mensaje.textContent =
-      error instanceof Error
-        ? error.message
-        : "Error desconocido";
-
-  } finally {
-    enviando = false;
-    actualizar();
-  }
-});
-
-// CREAR OTRO PEDIDO
-
-nuevoPedido.addEventListener("click", () => {
-  pedidoActual = null;
-  elegido = null;
-  intento = null;
-
-  jugador.value = "";
-  jugador.disabled = false;
-
-  estado.textContent = "Sin pedido";
-  codigoResumen.textContent = "—";
-
-  enlacePago.replaceChildren();
-
-  comprar.classList.remove("hidden");
-  nuevoPedido.classList.add("hidden");
-
-  document.querySelectorAll(".card")
-    .forEach(c => {
-      c.classList.remove("selected");
-      c.setAttribute("aria-pressed", "false");
-    });
-
-  actualizar();
-
-  $("paquetes").scrollIntoView({
-    behavior: "smooth"
-  });
-});
-
-actualizar();
-</script>
+  </script>
 </body>
 </html>
